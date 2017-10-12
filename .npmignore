@@ -1,0 +1,5 @@
+.idea/
+*.ts
+*.js
+*.json
+!index.d.ts
