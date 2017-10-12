@@ -1,5 +1,4 @@
 interface AJSType {
-	[key: string]: any;
 	contextPath: () => any;
 	deprecate: {
 		fn: (a?: any, b?: any, c?: any) => any;
@@ -9,7 +8,7 @@ interface AJSType {
 		obj: (a?: any, b?: any, c?: any) => any;
 		propertyDeprecationSupported: boolean;
 		getMessageLogger: (a?: any, b?: any) => any;
-	};
+	}
 	version: string;
 	preventDefault: (a?: any) => any;
 	stopEvent: () => any;
@@ -22,30 +21,60 @@ interface AJSType {
 	isVisible: () => any;
 	isClipped: (a?: any) => any;
 	params: {
-		isSpaceAdmin: boolean;
-		hasSpaceConfig: boolean;
+		isSpaceAdmin: string;
+		hasSpaceConfig: string;
 		showSpaceWelcomeDialog: boolean;
 		useKeyboardShortcuts: boolean;
 		discoveredPluginFeatures: string;
+		dcdAllowGlobalSearch: boolean;
 		keyboardshortcutHash: string;
+		teamCalendarsDisplayTimeFormat: string;
+		publicSignupPermitted: boolean;
+		cqIsAdmin: boolean;
+		cqIsAnonymous: boolean;
 		isConfluenceAdmin: boolean;
 		connectionTimeout: string;
-		pageId: string;
-		latestPageId: string;
+		isNewUser: boolean;
+		showDashboardOnboardingDialog: boolean;
+		showDashboardOnboardingTips: boolean;
+		userCanCreateContent: boolean;
+		useWatch: boolean;
+		attachmentSourceContentId: string;
+		useInlineTasks: boolean;
+		heartbeat: boolean;
+		actionLocale: string;
+		editorPluginResourcePrefix: string;
+		existingDraftId: string;
+		userWatchingOwnContent: string;
+		newPage: boolean;
+		contentId: string;
+		editorMode: string;
+		formName: string;
+		autoStart: boolean;
+		canAttachFiles: boolean;
+		draftId: string;
+		sharedDrafts: string;
+		minEditorHeight: string;
+		draftShareId: string;
 		contentType: string;
-		pageTitle: string;
-		latestPublishedPageTitle: string;
-		parentPageId: string;
-		spaceKey: string;
-		spaceName: string;
-		maxNumberEditors: string;
-		jiraMetadataCount: string;
-		fromPageTitle: string;
-		canRemovePage: boolean;
-		canRemovePageHierarchy: boolean;
-		browsePageTreeMode: string;
-		sharedDrafts: boolean;
-		userDisplayName: string;
+		versionComment: string;
+		draftType: string;
+		synchronyToken: string;
+		synchronyBaseUrl: string;
+		synchronyAppId: string;
+		synchronyDarkEnabled: string;
+		synchronyExpiry: string;
+		useXhrFallback: string;
+		maxThumbWidth: string;
+		maxThumbHeight: string;
+		canSendEmail: boolean;
+		isDevMode: boolean;
+		draftSaveInterval: string;
+		showHiddenUserMacros: boolean;
+		isAdmin: boolean;
+		'confluence.prefs.editor.disable.autocomplete': boolean;
+		'confluence.prefs.editor.disable.autoformat': boolean;
+		heartbeatInterval: string;
 		contextPath: string;
 		baseUrl: string;
 		versionNumber: string;
@@ -64,50 +93,9 @@ interface AJSType {
 		confluenceFlavour: string;
 		userDatePattern: string;
 		'date.format': string;
-		createIssueMetadataShowDiscovery: boolean;
-		siteTitle: string;
-		pageVersion: string;
-		useWatch: boolean;
-		attachmentSourceContentId: string;
-		useInlineTasks: boolean;
-		heartbeat: boolean;
-		actionLocale: string;
-		editorPluginResourcePrefix: string;
-		editMode: string;
-		userWatchingOwnContent: boolean;
-		newPage: boolean;
-		editorMode: string;
-		autoStart: boolean;
-		confRevision: string;
-		syncRevisionSource: string;
-		draftId: string;
-		draftShareId: string;
-		collaborativeEditorStatus: string;
-		existingDraftId: string;
-		contentId: string;
-		formName: string;
-		canAttachFiles: boolean;
-		showDraftMessage: boolean;
-		collaborativeContent: boolean;
-		minEditorHeight: string;
-		versionComment: string;
-		draftType: string;
-		synchronyToken: string;
-		synchronyBaseUrl: string;
-		synchronyAppId: string;
-		synchronyExpiry: string;
-		useXhrFallback: boolean;
-		maxThumbWidth: string;
-		maxThumbHeight: string;
-		canSendEmail: boolean;
-		isDevMode: boolean;
-		draftSaveInterval: string;
-		showHiddenUserMacros: boolean;
-		isAdmin: boolean;
-		'confluence.prefs.editor.disable.autocomplete': boolean;
-		'confluence.prefs.editor.disable.autoformat': boolean;
-		heartbeatInterval: string;
-	};
+		canvasStatsUAKey: string;
+		pageId: undefined;
+	}
 	populateParameters: (a?: any) => any;
 	error: () => any;
 	log: () => any;
@@ -122,6 +110,7 @@ interface AJSType {
 	escape: (a?: any) => any;
 	escapeHtml: (a?: any) => any;
 	filterBySearch: () => any;
+	drawLogo: () => any;
 	debounce: (a?: any, b?: any) => any;
 	debounceImmediate: (a?: any, b?: any) => any;
 	id: (a?: any) => any;
@@ -133,15 +122,16 @@ interface AJSType {
 	undim: () => any;
 	dropDown: (a?: any, b?: any) => any;
 	I18n: {
-		keys: {};
+		keys: {
+		}
 		get: (a?: any, b?: any, c?: any) => any;
 		load: (a?: any) => any;
 		getText: (a?: any, b?: any) => any;
-	};
+	}
 	navigation: (a?: any, b?: any) => any;
 	responsiveheader: {
 		setup: () => any;
-	};
+	}
 	FocusManager: () => any;
 	keyCode: {
 		ALT: number;
@@ -177,7 +167,7 @@ interface AJSType {
 		TAB: number;
 		UP: number;
 		WINDOWS: number;
-	};
+	}
 	layer: (a?: any, b?: any) => any;
 	LayerManager: () => any;
 	bind: (a?: any, b?: any, c?: any) => any;
@@ -199,41 +189,47 @@ interface AJSType {
 		info: (a?: any, b?: any) => any;
 		success: (a?: any, b?: any) => any;
 		hint: (a?: any, b?: any) => any;
-	};
+	}
 	tabs: {
 		setup: () => any;
 		change: (a?: any) => any;
-	};
+	}
 	whenIType: (a?: any) => any;
 	cookie: {
 		erase: (a?: any) => any;
 		read: (a?: any, b?: any) => any;
 		save: (a?: any, b?: any, c?: any) => any;
-	};
+	}
 	Cookie: {
 		erase: (a?: any) => any;
 		read: (a?: any, b?: any) => any;
 		save: (a?: any, b?: any, c?: any) => any;
-	};
+	}
 	flag: (a?: any) => any;
 	asBooleanOrString: (a?: any) => any;
 	Meta: {
 		set: (a?: any, b?: any) => any;
 		get: (a?: any) => any;
-		getBoolean: (a?: any) => any;
-		getNumber: (a?: any) => any;
-		getAllAsMap: () => any;
+		getBoolean: (a?: any) => boolean;
+		getNumber: (a?: any) => number;
+		getAllAsMap: () => {[key: string]: any};
 		Links: {
 			canonical: () => any;
 			shortlink: () => any;
-		};
-	};
+		}
+	}
 	DarkFeatures: {
 		isEnabled: (a?: any) => any;
 		enable: (a?: any) => any;
 		disable: (a?: any) => any;
 		getAllEnabled: () => any;
-	};
+		remotely: {
+			user: {
+				enable: (a?: any) => any;
+				disable: (a?: any) => any;
+			}
+		}
+	}
 	storageManager: (a?: any, b?: any) => any;
 	defaultIfUndefined: (a?: any, b?: any) => any;
 	debug: () => any;
@@ -243,7 +239,7 @@ interface AJSType {
 	Validate: {
 		email: (a?: any) => any;
 		url: (a?: any) => any;
-	};
+	}
 	Data: {
 		set: (a?: any, b?: any) => any;
 		get: (a?: any) => any;
@@ -253,8 +249,8 @@ interface AJSType {
 		Links: {
 			canonical: () => any;
 			shortlink: () => any;
-		};
-	};
+		}
+	}
 	MessageHandler: (a?: any, b?: any) => any;
 	ConfluenceDialog: (a?: any) => any;
 	safeHTML: (a?: any) => any;
@@ -267,7 +263,7 @@ interface AJSType {
 		wikiLink: (a?: any) => any;
 		makeRestMatrixFromData: (a?: any, b?: any) => any;
 		makeRestMatrixFromSearchData: (a?: any, b?: any) => any;
-	};
+	}
 	Confluence: {
 		getContextPath: () => any;
 		getBaseUrl: () => any;
@@ -296,13 +292,13 @@ interface AJSType {
 			favourites: () => any;
 			watching: () => any;
 			autocompleteMultiUser: (a?: any) => any;
-		};
+		}
 		hintManager: (a?: any) => any;
 		debugTime: (a?: any) => any;
 		debugTimeEnd: (a?: any) => any;
 		Defaults: {
 			maxResults: number;
-		};
+		}
 		Highlighter: (a?: any, b?: any) => any;
 		cacheManager: (a?: any) => any;
 		localStorageCacheManager: (a?: any, b?: any) => any;
@@ -315,26 +311,26 @@ interface AJSType {
 				breadcrumbItem: (a?: any, b?: any) => any;
 				breadcrumbLoading: (a?: any, b?: any) => any;
 				breadcrumbError: (a?: any, b?: any) => any;
-			};
+			}
 			ManageWatchers: {
 				dialogContent: (a?: any, b?: any) => any;
 				userItem: (a?: any, b?: any) => any;
 				helpLink: (a?: any, b?: any) => any;
 				addWatcherForm: (a?: any, b?: any) => any;
-			};
+			}
 			Breadcrumbs: {
 				render: (a?: any, b?: any) => any;
-			};
+			}
 			Labels: {
 				helpLink: (a?: any, b?: any) => any;
 				dialog: (a?: any, b?: any) => any;
 				nolabels: (a?: any, b?: any) => any;
 				dialogLabelList: (a?: any, b?: any) => any;
 				dialogLabels: (a?: any, b?: any) => any;
-			};
+			}
 			DomFilterField: {
 				form: (a?: any, b?: any) => any;
-			};
+			}
 			Blueprints: {
 				createDialogBody: (a?: any, b?: any) => any;
 				waitContainer: (a?: any, b?: any) => any;
@@ -347,12 +343,11 @@ interface AJSType {
 					createPersonalSpaceForm: (a?: any, b?: any) => any;
 					spaceFormPermissions: (a?: any, b?: any) => any;
 					welcome: (a?: any, b?: any) => any;
-				};
-				sidebarIndexPagePopup: (a?: any, b?: any) => any;
+				}
 				CreateFromTemplate: {
 					macroTemplate: (a?: any, b?: any) => any;
-				};
-			};
+				}
+			}
 			KeyboardShortcutsDialog: {
 				Autoformat: {
 					configureAutocomplete: (a?: any, b?: any) => any;
@@ -374,160 +369,72 @@ interface AJSType {
 					numberedListDescription: (a?: any, b?: any) => any;
 					bulletedListDescription: (a?: any, b?: any) => any;
 					inlineTaskListDescription: (a?: any, b?: any) => any;
-				};
+				}
 				keyboardShortcutModule: (a?: any, b?: any) => any;
 				keyboardShortcutEnabledCheckbox: (a?: any, b?: any) => any;
 				keyboardShortcutPanel: (a?: any, b?: any) => any;
-			};
-			Pagetree: {
-				Macro: {
-					loadingIndicator: (a?: any, b?: any) => any;
-				};
-			};
-			pageLoadingIndicator: (a?: any, b?: any) => any;
+			}
 			Hipchat: {
 				Discovery: {
 					integrationDialog: (a?: any, b?: any) => any;
-					spaceIntegrationDialog: (a?: any, b?: any) => any;
-					spaceLinkDialog: (a?: any, b?: any) => any;
-				};
-			};
+				}
+			}
 			HipChat: {
 				Presence: {
 					badge: (a?: any, b?: any) => any;
 					chatBar: (a?: any, b?: any) => any;
-				};
-			};
-			Metadata: {
-				JIRA: {
-					metadata: (a?: any, b?: any) => any;
-					featureDiscovery: (a?: any, b?: any) => any;
-					nometadata: (a?: any, b?: any) => any;
-					renderAuthPrompts: (a?: any, b?: any) => any;
-					renderGroup: (a?: any, b?: any) => any;
-					loadingMetadata: (a?: any, b?: any) => any;
-					renderJiraErrors: (a?: any, b?: any) => any;
-					unknownError: (a?: any, b?: any) => any;
-				};
-			};
-			Sidebar: {
-				headerStyles: (a?: any, b?: any) => any;
-				sidebar: (a?: any, b?: any) => any;
-				renderFavouriteSpace: (a?: any, b?: any) => any;
-				renderLinks: (a?: any, b?: any) => any;
-				renderCustomContent: (a?: any, b?: any) => any;
-				renderLinksSection: (a?: any, b?: any) => any;
-				contextualNav: (a?: any, b?: any) => any;
-				pagetreeList: (a?: any, b?: any) => any;
-				throbber: (a?: any, b?: any) => any;
-				treeThrobber: (a?: any, b?: any) => any;
-				pagetreeItem: (a?: any, b?: any) => any;
-				renderSpaceToolsSection: (a?: any, b?: any) => any;
-				spaceToolsMenu: (a?: any, b?: any) => any;
-				configure: (a?: any, b?: any) => any;
-				Pages: {
-					renderPageContextualNav: (a?: any, b?: any) => any;
-					childPages: (a?: any, b?: any) => any;
-					currentPage: (a?: any, b?: any) => any;
-					parentPage: (a?: any, b?: any) => any;
-					renderChildren: (a?: any, b?: any) => any;
-				};
-			};
-			Likes: {
-				likeButton: (a?: any, b?: any) => any;
-				likeSection: (a?: any, b?: any) => any;
-				commentLikeSection: (a?: any, b?: any) => any;
-				likesDialog: (a?: any, b?: any) => any;
-				userLink: (a?: any, b?: any) => any;
-			};
+				}
+			}
+			GettingStarted: {
+				popularTabEmpty: (a?: any, b?: any) => any;
+			}
 			User: {
 				userLinkUrl: (a?: any, b?: any) => any;
 				logo: (a?: any, b?: any) => any;
 				usernameLink: (a?: any, b?: any) => any;
 				fullNameOrAnonymous: (a?: any, b?: any) => any;
 				usernameOrAnonymous: (a?: any, b?: any) => any;
-			};
+			}
 			Icons: {
 				contentIcon: (a?: any, b?: any) => any;
 				contentIconFont: (a?: any, b?: any) => any;
 				iconSpan: (a?: any, b?: any) => any;
-			};
+			}
 			Captcha: {
 				form: (a?: any, b?: any) => any;
 				image: (a?: any, b?: any) => any;
-			};
+			}
 			Notifications: {
 				notLoggedIn: (a?: any, b?: any) => any;
 				actionErrors: (a?: any, b?: any) => any;
-			};
-			PageBanner: {
-				banner: (a?: any, b?: any) => any;
-				renderSystemContentItems: (a?: any, b?: any) => any;
-				renderPageBannerItem: (a?: any, b?: any) => any;
-				itemAnchor: (a?: any, b?: any) => any;
-				itemIcon: (a?: any, b?: any) => any;
-				draftStatusDiscovery: (a?: any, b?: any) => any;
-			};
-			Comments: {
-				displayReplyEditorLoadingContainer: (a?: any, b?: any) => any;
-				displayTopLevelCommentEditorPlaceholder: (a?: any, b?: any) => any;
-				displayEditEditorContainer: (a?: any, b?: any) => any;
-				editorLoadErrorMessage: (a?: any, b?: any) => any;
-				displayCommentEditorCommon: (a?: any, b?: any) => any;
-				userLogo: (a?: any, b?: any) => any;
-				displayComment: (a?: any, b?: any) => any;
-				commentThread: (a?: any, b?: any) => any;
-				commentThreadItem: (a?: any, b?: any) => any;
-				commentView: (a?: any, b?: any) => any;
-				displayCommentActions: (a?: any, b?: any) => any;
-			};
-			Plugins: {
-				ContentReport: {
-					contentReportTable: (a?: any, b?: any) => any;
-				};
-			};
-			BrowseSpaces: {
-				spacesLink: (a?: any, b?: any) => any;
-			};
-			LicenseBanner: {
-				wrapper: (a?: any, b?: any) => any;
-				expiryBanner: (a?: any, b?: any) => any;
-				maintenanceBanner: (a?: any, b?: any) => any;
-			};
-			DialogWizard: {
-				pageContainer: (a?: any, b?: any) => any;
-				waitIcon: (a?: any, b?: any) => any;
-			};
-			Meeting: {
-				Notes: {
-					userMention: (a?: any, b?: any) => any;
-				};
-			};
-			Roadmap: {
-				barDialog: (a?: any, b?: any) => any;
-				buildPageLink: (a?: any, b?: any) => any;
-				inlineEditSaveButton: (a?: any, b?: any) => any;
-				inlineEditCancelButton: (a?: any, b?: any) => any;
-				toolbar: (a?: any, b?: any) => any;
-				timelineOptionsForm: (a?: any, b?: any) => any;
-				timeline: (a?: any, b?: any) => any;
-				timelineColumn: (a?: any, b?: any) => any;
-				roadmapPopupPanel: (a?: any, b?: any) => any;
-				roadmapEditor: (a?: any, b?: any) => any;
-				lane: (a?: any, b?: any) => any;
-				marker: (a?: any, b?: any) => any;
-				bar: (a?: any, b?: any) => any;
-				newRowLine: (a?: any, b?: any) => any;
-				deprecationDialog: (a?: any, b?: any) => any;
-				newRowPlaceholder: (a?: any, b?: any) => any;
-				laneDialog: (a?: any, b?: any) => any;
-				markerDialog: (a?: any, b?: any) => any;
-				markerRenameDialog: (a?: any, b?: any) => any;
-				laneRenameDialog: (a?: any, b?: any) => any;
-				laneColorSelect: (a?: any, b?: any) => any;
-				linkPageTitle: (a?: any, b?: any) => any;
-				footerActionContent: (a?: any, b?: any) => any;
-			};
+			}
+			Share: {
+				Dialog: {
+					shareContentPopup: (a?: any, b?: any) => any;
+					recipientUser: (a?: any, b?: any) => any;
+					recipientEmail: (a?: any, b?: any) => any;
+					recipientGroup: (a?: any, b?: any) => any;
+				}
+			}
+			AddPagetree: {
+				addPageTreeDialog: (a?: any, b?: any) => any;
+			}
+			AddPagetreePre510: {
+				addPageTreeDialog: (a?: any, b?: any) => any;
+			}
+			ConfigureGitAttachment: {
+				dialogContent: (a?: any, b?: any) => any;
+			}
+			LinkBrowser: {
+				gitattachmentPanel: (a?: any, b?: any) => any;
+				searchPanel: (a?: any, b?: any) => any;
+				recentlyviewedPanel: (a?: any, b?: any) => any;
+				attachmentsPanel: (a?: any, b?: any) => any;
+				weblinkPanel: (a?: any, b?: any) => any;
+				advancedPanel: (a?: any, b?: any) => any;
+				locationPanel: (a?: any, b?: any) => any;
+				helpLink: (a?: any, b?: any) => any;
+			}
 			File: {
 				fileDialogListItem: (a?: any, b?: any) => any;
 				fileDialogListItemPlaceHolder: (a?: any, b?: any) => any;
@@ -536,11 +443,11 @@ interface AJSType {
 				webPanel: (a?: any, b?: any) => any;
 				searchPanel: (a?: any, b?: any) => any;
 				helpLink: (a?: any, b?: any) => any;
-			};
+			}
 			MacroBrowser: {
 				CQL: {
 					sections: (a?: any, b?: any) => any;
-				};
+				}
 				macroSummaryList: (a?: any, b?: any) => any;
 				macroSummaryItem: (a?: any, b?: any) => any;
 				macroDescription: (a?: any, b?: any) => any;
@@ -554,14 +461,15 @@ interface AJSType {
 				macroBody: (a?: any, b?: any) => any;
 				helpLink: (a?: any, b?: any) => any;
 				gadgetLink: (a?: any, b?: any) => any;
-			};
+			}
+			pageLoadingIndicator: (a?: any, b?: any) => any;
 			InsertWiki: {
 				originalDefaultTempWikiMarkupDialog: (a?: any, b?: any) => any;
 				previewWikiIframeContent: (a?: any, b?: any) => any;
 				wikiMarkupDialog: (a?: any, b?: any) => any;
 				wikiErrorSubDialog: (a?: any, b?: any) => any;
 				wikiParserSelector: (a?: any, b?: any) => any;
-			};
+			}
 			Editor: {
 				Page: {
 					saveButton: (a?: any, b?: any) => any;
@@ -572,82 +480,35 @@ interface AJSType {
 					quitDialogContent: (a?: any, b?: any) => any;
 					hiddenInputCancel: (a?: any, b?: any) => any;
 					contributorList: (a?: any, b?: any) => any;
-				};
+				}
 				Toolbar: {
 					toolbarButton: (a?: any, b?: any) => any;
-				};
+				}
 				SaveBar: {
 					Watch: {
 						render: (a?: any, b?: any) => any;
-					};
+					}
 					NotifyWatchers: {
 						render: (a?: any, b?: any) => any;
-					};
+					}
 					VersionComment: {
 						render: (a?: any, b?: any) => any;
-					};
-				};
+					}
+				}
 				Reliable: {
 					draftMessage: (a?: any, b?: any) => any;
-				};
+				}
 				ImageAttributes: {
 					content: (a?: any, b?: any) => any;
-				};
-			};
+				}
+			}
 			DraftChanges: {
 				dialogContent: (a?: any, b?: any) => any;
 				helpLink: (a?: any, b?: any) => any;
-			};
+			}
 			UnpublishedChanges: {
 				lozenge: (a?: any, b?: any) => any;
-			};
-			SynchronyPresence: {
-				container: (a?: any, b?: any) => any;
-				avatar: (a?: any, b?: any) => any;
-				overlay: (a?: any, b?: any) => any;
-			};
-			CollaborativeEditor: {
-				StatusIndicator: {
-					container: (a?: any, b?: any) => any;
-				};
-			};
-			HipChatEmoticons: {
-				Dialog: {
-					emoticonDialog: (a?: any, b?: any) => any;
-					confluenceEmoticons: (a?: any, b?: any) => any;
-					hipchatEmoticons: (a?: any, b?: any) => any;
-					genericEmoticonRepeater: (a?: any, b?: any) => any;
-				};
-			};
-			SelectGrid: {
-				gridOutline: (a?: any, b?: any) => any;
-				cellWithLink: (a?: any, b?: any) => any;
-				cellWithoutLink: (a?: any, b?: any) => any;
-			};
-			LinkBrowser: {
-				searchPanel: (a?: any, b?: any) => any;
-				recentlyviewedPanel: (a?: any, b?: any) => any;
-				attachmentsPanel: (a?: any, b?: any) => any;
-				weblinkPanel: (a?: any, b?: any) => any;
-				advancedPanel: (a?: any, b?: any) => any;
-				locationPanel: (a?: any, b?: any) => any;
-				helpLink: (a?: any, b?: any) => any;
-			};
-			PageLayout: {
-				contentLayout: (a?: any, b?: any) => any;
-				cellLayout: (a?: any, b?: any) => any;
-				smallCellLayout: (a?: any, b?: any) => any;
-				headerLayout: (a?: any, b?: any) => any;
-				footerLayout: (a?: any, b?: any) => any;
-				columnLayout: (a?: any, b?: any) => any;
-				emptyLayout2: (a?: any, b?: any) => any;
-				emptySection2: (a?: any, b?: any) => any;
-				newSection2: (a?: any, b?: any) => any;
-				cell2: (a?: any, b?: any) => any;
-			};
-			Variables: {
-				renderVariableItem: (a?: any, b?: any) => any;
-			};
+			}
 			ConfluenceJiraPlugin: {
 				displayOptsHtml: (a?: any, b?: any) => any;
 				displayOptsOverlayHtml: (a?: any, b?: any) => any;
@@ -674,13 +535,135 @@ interface AJSType {
 				renderOptions: (a?: any, b?: any) => any;
 				renderOption: (a?: any, b?: any) => any;
 				renderCreateErrorPanel: (a?: any, b?: any) => any;
-			};
-		};
+			}
+			SynchronyPresence: {
+				container: (a?: any, b?: any) => any;
+				avatar: (a?: any, b?: any) => any;
+				overlay: (a?: any, b?: any) => any;
+			}
+			CollaborativeEditor: {
+				StatusIndicator: {
+					container: (a?: any, b?: any) => any;
+				}
+			}
+			SelectGrid: {
+				gridOutline: (a?: any, b?: any) => any;
+				cellWithLink: (a?: any, b?: any) => any;
+				cellWithoutLink: (a?: any, b?: any) => any;
+			}
+			Variables: {
+				renderVariableItem: (a?: any, b?: any) => any;
+			}
+			Roadmap: {
+				toolbar: (a?: any, b?: any) => any;
+				timelineOptionsForm: (a?: any, b?: any) => any;
+				timeline: (a?: any, b?: any) => any;
+				timelineColumn: (a?: any, b?: any) => any;
+				barDialog: (a?: any, b?: any) => any;
+				buildPageLink: (a?: any, b?: any) => any;
+				inlineEditSaveButton: (a?: any, b?: any) => any;
+				inlineEditCancelButton: (a?: any, b?: any) => any;
+				roadmapPopupPanel: (a?: any, b?: any) => any;
+				roadmapEditor: (a?: any, b?: any) => any;
+				lane: (a?: any, b?: any) => any;
+				marker: (a?: any, b?: any) => any;
+				bar: (a?: any, b?: any) => any;
+				newRowLine: (a?: any, b?: any) => any;
+				deprecationDialog: (a?: any, b?: any) => any;
+				newRowPlaceholder: (a?: any, b?: any) => any;
+				laneDialog: (a?: any, b?: any) => any;
+				markerDialog: (a?: any, b?: any) => any;
+				markerRenameDialog: (a?: any, b?: any) => any;
+				laneRenameDialog: (a?: any, b?: any) => any;
+				laneColorSelect: (a?: any, b?: any) => any;
+				linkPageTitle: (a?: any, b?: any) => any;
+				footerActionContent: (a?: any, b?: any) => any;
+			}
+			Multivote: {
+				table: (a?: any, b?: any) => any;
+				exampleMultivote: (a?: any, b?: any) => any;
+			}
+			PageLayout: {
+				contentLayout: (a?: any, b?: any) => any;
+				cellLayout: (a?: any, b?: any) => any;
+				smallCellLayout: (a?: any, b?: any) => any;
+				headerLayout: (a?: any, b?: any) => any;
+				footerLayout: (a?: any, b?: any) => any;
+				columnLayout: (a?: any, b?: any) => any;
+				emptyLayout2: (a?: any, b?: any) => any;
+				emptySection2: (a?: any, b?: any) => any;
+				newSection2: (a?: any, b?: any) => any;
+				cell2: (a?: any, b?: any) => any;
+			}
+			HipChatEmoticons: {
+				Dialog: {
+					emoticonDialog: (a?: any, b?: any) => any;
+					confluenceEmoticons: (a?: any, b?: any) => any;
+					hipchatEmoticons: (a?: any, b?: any) => any;
+					genericEmoticonRepeater: (a?: any, b?: any) => any;
+				}
+			}
+			BrowseSpaces: {
+				spacesLink: (a?: any, b?: any) => any;
+			}
+			LicenseBanner: {
+				wrapper: (a?: any, b?: any) => any;
+				expiryBanner: (a?: any, b?: any) => any;
+				maintenanceBanner: (a?: any, b?: any) => any;
+			}
+			DialogWizard: {
+				pageContainer: (a?: any, b?: any) => any;
+				waitIcon: (a?: any, b?: any) => any;
+			}
+			Plugins: {
+				Content: {
+					Status: {
+						Indicator: {
+							info: (a?: any, b?: any) => any;
+							statusEvent: (a?: any, b?: any) => any;
+						}
+					}
+				}
+			}
+			Meeting: {
+				Notes: {
+					userMention: (a?: any, b?: any) => any;
+				}
+			}
+			Comments: {
+				displayReplyEditorLoadingContainer: (a?: any, b?: any) => any;
+				displayTopLevelCommentEditorPlaceholder: (a?: any, b?: any) => any;
+				displayEditEditorContainer: (a?: any, b?: any) => any;
+				editorLoadErrorMessage: (a?: any, b?: any) => any;
+				displayCommentEditorCommon: (a?: any, b?: any) => any;
+				userLogo: (a?: any, b?: any) => any;
+				displayComment: (a?: any, b?: any) => any;
+				commentThread: (a?: any, b?: any) => any;
+				commentThreadItem: (a?: any, b?: any) => any;
+				commentView: (a?: any, b?: any) => any;
+				displayCommentActions: (a?: any, b?: any) => any;
+			}
+			Dashboard: {
+				streamItems: (a?: any, b?: any) => any;
+				streamItemsContents: (a?: any, b?: any) => any;
+				titleFirstStreamItem: (a?: any, b?: any) => any;
+				compactStreamItem: (a?: any, b?: any) => any;
+				Updates: {
+					streamLoading: (a?: any, b?: any) => any;
+					tabs: (a?: any, b?: any) => any;
+					updatesTab: (a?: any, b?: any) => any;
+					updates: (a?: any, b?: any) => any;
+					displayErrors: (a?: any, b?: any) => any;
+					updateItem: (a?: any, b?: any) => any;
+					updateItemNoPics: (a?: any, b?: any) => any;
+				}
+			}
+		}
 		PropertyPanel: {
 			shouldCreate: boolean;
 			current: {
 				current: any;
-			};
+			}
 			getAnchor: () => any;
 			createFromButtonModel: (a?: any, b?: any, c?: any, d?: any) => any;
 			create: (a?: any, b?: any, c?: any, d?: any) => any;
@@ -690,55 +673,51 @@ interface AJSType {
 				name: string;
 				canHandleElement: (a?: any) => any;
 				handle: (a?: any) => any;
-			};
+			}
 			Image: {
-				pluginButtons: {
-					pluginButtons: any[];
-				};
+				pluginButtons: any[];
 				name: string;
 				getPresetImageSize: (a?: any) => any;
 				canHandleElement: (a?: any) => any;
 				handle: (a?: any) => any;
-			};
+			}
 			Macro: {
 				name: string;
-				registeredEvents: {
-					registeredEvents: any[];
-				};
+				registeredEvents: any[];
 				canHandleElement: (a?: any) => any;
 				handle: (a?: any) => any;
 				registerButtonHandler: (a?: any, b?: any, c?: any) => any;
 				registerInitHandler: (a?: any, b?: any) => any;
 				yieldButtonFor: (a?: any, b?: any) => any;
-			};
+			}
 			TextPlaceholder: {
 				name: string;
 				canHandleElement: (a?: any) => any;
 				handle: (a?: any) => any;
-			};
+			}
 			Variable: {
 				name: string;
 				canHandleElement: (a?: any) => any;
 				handle: (a?: any) => any;
-			};
-		};
+			}
+		}
 		QuickNav: {
 			addDropDownPostProcess: (a?: any) => any;
 			setMakeParams: (a?: any) => any;
 			init: (a?: any, b?: any) => any;
-		};
+		}
 		DomFilterField: (a?: any) => any;
 		Dialogs: {
 			CreateDialogBase: (a?: any) => any;
 			Events: {
 				ITEM_SELECTED: string;
-			};
+			}
 			Breadcrumbs: {
 				getBreadcrumbs: (a?: any, b?: any, c?: any) => any;
 				Controller: (a?: any, b?: any) => any;
 				defaultGetBreadcrumbs: (a?: any, b?: any, c?: any) => any;
-			};
-		};
+			}
+		}
 		SpaceBlueprint: {
 			loaded: {
 				done: () => any;
@@ -757,17 +736,17 @@ interface AJSType {
 				rejectWith: (a?: any, b?: any) => any;
 				notify: () => any;
 				notifyWith: (a?: any, b?: any) => any;
-			};
+			}
 			WelcomeDialog: {
 				isShowWelcomeDialog: () => any;
 				showWelcomeDialog: () => any;
-			};
+			}
 			CommonWizardBindings: {
 				preRender: (a?: any, b?: any) => any;
 				postRender: (a?: any, b?: any) => any;
 				submit: (a?: any, b?: any) => any;
-			};
-		};
+			}
+		}
 		Blueprint: {
 			register: (a?: any, b?: any) => any;
 			validateTitle: (a?: any, b?: any, c?: any, d?: any) => any;
@@ -780,349 +759,67 @@ interface AJSType {
 			fireWizard: (a?: any, b?: any, c?: any) => any;
 			Util: {
 				getParentPageLocation: () => any;
-			};
+			}
 			Selector: {
 				registerSelector: (a?: any) => any;
 				getSelectors: () => any;
-			};
-			showIndexPagePopup: (a?: any) => any;
+			}
 			Dialog: {
 				openDialog: (a?: any) => any;
 				closeDialog: () => any;
 				requestWebItems: (a?: any, b?: any) => any;
 				requestSpaces: () => any;
-				loadedWebitems: {};
-				loadedSpaces: {};
+				loadedWebitems: {
+				}
+				loadedSpaces: {
+				}
 				fillWebItemsInDialog: (a?: any, b?: any) => any;
 				filterWebItems: (a?: any) => any;
 				getSpaceKey: () => any;
-			};
+			}
 			loadDialog: (a?: any) => any;
 			loadDialogAndOpenTemplate: (a?: any) => any;
-		};
+		}
 		Quick: {
 			Create: {
 				discoveryTooltip: (a?: any, b?: any) => any;
-			};
-		};
+			}
+		}
 		KeyboardShortcuts: {
-			Editor: {
-				Editor: any[];
-			};
+			Editor: any[];
 			enabled: boolean;
 			ready: boolean;
 			dialog: {
 				dialog: any;
-			};
+			}
 			closeDialog: () => any;
 			openDialog: () => any;
 			getDialog: () => any;
-			Autoformat: {
-				Autoformat: any[];
-			};
-			shortcuts: {
-				shortcuts: any[];
-			};
-		};
-		Plugins: {
-			PagetreeMacro: {
-				bind: (a?: any) => any;
-			};
-			ExpandMacro: {
-				bind: (a?: any, b?: any, c?: any, d?: any) => any;
-			};
-			TableOfContents: {
-				Client: {
-					tocItemBody: (a?: any, b?: any) => any;
-					listStyleTocLevelContainer: (a?: any, b?: any) => any;
-					listStyleTocItemContainer: (a?: any, b?: any) => any;
-					flatStyleTocItemContainer: (a?: any, b?: any) => any;
-					flatStyleTocSeparator: (a?: any, b?: any) => any;
-				};
-			};
-		};
-		PageLoadingIndicator: (a?: any) => any;
-		ContributorsMacro: {
-			ajaxContainer: (a?: any, b?: any) => any;
-			renderContent: (a?: any, b?: any) => any;
-			flatLayout: (a?: any, b?: any) => any;
-			listLayout: (a?: any, b?: any) => any;
-			flatContributorsList: (a?: any, b?: any) => any;
-			contributor: (a?: any, b?: any) => any;
-		};
-		EditorLoader: {
-			getPreloadContainer: () => any;
-			getEditorPreloadMarkup: () => any;
-			resourcesLoaded: () => any;
-			loadingTimeout: number;
-			isEditorActive: () => any;
-			load: (a?: any, b?: any) => any;
-			getEditorForm: () => any;
-		};
-		BlockAndBuffer: {
-			block: (a?: any) => any;
-		};
-		Sidebar: {
-			Pages: {
-				installHandlers: (a?: any) => any;
-				quickLinksContent: () => any;
-				childPageCollapsedContent: () => any;
-				pageTreeCollapsedContent: () => any;
-			};
-			createFlyouts: (a?: any) => any;
-			collapseTooltip: string;
-			expandTooltip: string;
-			throbberDiv: () => any;
-			applyTooltip: (a?: any, b?: any) => any;
-			toggle: () => any;
-			Configure: {
-				mode: boolean;
-				Logo: {
-					unbind: () => any;
-				};
-			};
-		};
-		ConfigurableNav: () => any;
-		Likes: {
-			getLikesCache: () => any;
-			showLikeUsers: (a?: any) => any;
-			appendAction: (a?: any) => any;
-			reload: (a?: any) => any;
-			updateComment: (a?: any, b?: any) => any;
-			LikeSummaryFactory: {
-				getLikeSummary: (a?: any, b?: any, c?: any) => any;
-			};
-		};
-		FeatureDiscovery: {
-			forPlugin: (a?: any, b?: any) => any;
-		};
-		Comments: {
-			bindRemoveConfirmation: (a?: any) => any;
-		};
-		CommentDisplayManager: {
-			addComment: (a?: any, b?: any, c?: any, d?: any) => any;
-			addOrUpdateComment: (a?: any, b?: any, c?: any, d?: any) => any;
-			isVisible: () => any;
-			hasComments: () => any;
-			commentCount: () => any;
-			clearFocus: () => any;
-			getCommentNode: (a?: any) => any;
-			getParentId: (a?: any) => any;
-		};
-		DocThemeUtils: {
-			isDocTheme: () => any;
-			appendAbsolutePositionedElement: (a?: any) => any;
-			getMainContentScrollTop: () => any;
-			getMainContentScrollLeft: () => any;
-			getDocThemeContentElement: () => any;
-		};
-		ScrollingInlineDialog: (a?: any, b?: any, c?: any, d?: any) => any;
-		HighlightAction: {
-			registerButtonHandler: (a?: any, b?: any) => any;
-			getButtonHandler: (a?: any) => any;
-			insertContentAtSelectionEnd: (a?: any) => any;
-			insertContentsInTableColumnCells: (a?: any) => any;
-			createTableInsertionBean: (a?: any, b?: any, c?: any) => any;
-			createInsertionBean: (a?: any, b?: any) => any;
-			createXMLModificationBean: (a?: any, b?: any) => any;
-			clearTextSelection: () => any;
-			WORKING_AREA: {
-				MAINCONTENT_AND_COMMENT: (a?: any) => any;
-				MAINCONTENT_ONLY: (a?: any) => any;
-				COMMENT_ONLY: (a?: any) => any;
-			};
-			RangeHelper: {
-				getRangeOption: (a?: any) => any;
-				getUserSelectionRange: () => any;
-				getSelectionRects: (a?: any) => any;
-				getSelectionText: (a?: any) => any;
-				getSelectionHTML: (a?: any) => any;
-				getContainingElement: (a?: any) => any;
-				getFirstAndLastSelectionRect: (a?: any, b?: any) => any;
-				isSelectionInsideContent: (a?: any, b?: any) => any;
-				computeSearchTextObject: (a?: any, b?: any) => any;
-			};
-			Analytics: {
-				sendAnalyticsForOpeningHighlightOptionPanel: () => any;
-				sendAnalyticsForQuoteInComment: (a?: any) => any;
-			};
-		};
-		HighlightPanel: {
+			Autoformat: any[];
+			shortcuts: any[];
+		}
+		Analytics: {
+			setAnalyticsSource: (a?: any, b?: any) => any;
+			srcRemovedUrl: (a?: any) => any;
+			srcParamValues: (a?: any) => any;
+			srcAttrParamValues: (a?: any) => any;
+			extractAnalyticsData: (a?: any) => any;
+			publish: (a?: any, b?: any) => any;
+			init: () => any;
+		}
+		Watch: {
 			Templates: {
-				panelContent: (a?: any, b?: any) => any;
-			};
-		};
-		Blueprints: {
-			SharelinksUrlMacro: {
-				bookmarkletLink: (a?: any, b?: any) => any;
-				bookmarkletScript: (a?: any, b?: any) => any;
-			};
-			Common: {
-				Index: {
-					detailsSummaryMacro: (a?: any, b?: any) => any;
-					createFromTemplateMacro: (a?: any, b?: any) => any;
-				};
-			};
-			Meeting: {
-				Notes: {
-					howTo: (a?: any, b?: any) => any;
-				};
-			};
-		};
-		InlineTasks: {
-			Notice: (a?: any) => any;
-			Templates: {
-				notice: (a?: any, b?: any) => any;
-			};
-			TasksTableSortable: (a?: any) => any;
-			Report: {
-				Templates: {
-					tasksReport: (a?: any, b?: any) => any;
-					tasksFeatureDiscoveryNotification: (a?: any, b?: any) => any;
-					tasksReportLine: (a?: any, b?: any) => any;
-					taskReportBrowserWarning: (a?: any, b?: any) => any;
-					taskReportWarning: (a?: any, b?: any) => any;
-				};
-			};
-			TasksReport: {
-				renderBlankExperiences: (a?: any, b?: any) => any;
-			};
-			Util: {
-				NODE_TYPE: {
-					ELEMENT_NODE: number;
-					ATTRIBUTE_NODE: number;
-					TEXT_NODE: number;
-					CDATA_SECTION_NODE: number;
-					ENTITY_REFERENCE_NODE: number;
-					ENTITY_NODE: number;
-					PROCESSING_INSTRUCTION_NODE: number;
-					COMMENT_NODE: number;
-					DOCUMENT_NODE: number;
-					DOCUMENT_TYPE_NODE: number;
-					DOCUMENT_FRAGMENT_NODE: number;
-					NOTATION_NODE: number;
-				};
-				KEY: {
-					BACKSPACE: number;
-					SPACE: number;
-					PAGEUP: number;
-					PAGEDOWN: number;
-					END: number;
-					HOME: number;
-					INS: number;
-					TAB: number;
-					ENTER: number;
-					SHIFT: number;
-					CTRL: number;
-					ALT: number;
-					ESCAPE: number;
-					LEFT: number;
-					UP: number;
-					RIGHT: number;
-					DOWN: number;
-					DELETE: number;
-					META: number;
-				};
-				addContentEditableIfApplicable: (a?: any) => any;
-			};
-			DateUtil: {
-				PATTERN_INSERTING: string;
-				PATTERN_LOZENGE: string;
-				PATTERN_INSIDE_TIME_ELE: string;
-				convertDateIntoHtml: (a?: any, b?: any, c?: any, d?: any) => any;
-				insertDateIntoCurrentCursor: (a?: any, b?: any, c?: any, d?: any, e?: any) => any;
-				parse: (a?: any, b?: any) => any;
-				format: (a?: any, b?: any) => any;
-				guessPartialDate: (a?: any, b?: any) => any;
-				datepicker: {
-					POSITION_ABOVE: boolean;
-					POSITION_BELOW: boolean;
-					POSITION_RIGHT: boolean;
-					POSITION_LEFT: boolean;
-					dropDownStillFitsVertically: (a?: any, b?: any, c?: any) => any;
-					dropDownStillFitsHorizontally: (a?: any, b?: any, c?: any) => any;
-					getPreferredHorizontalPosition: (a?: any, b?: any) => any;
-					getPreferredVerticalPosition: (a?: any, b?: any) => any;
-					calculateDatepickerPosition: (a?: any) => any;
-					getHintTextOfDatePicker: (a?: any) => any;
-					create: (a?: any) => any;
-				};
-				PATTERN_INSERTING_ALTERNATE: string;
-			};
-		};
-		UI: {
-			Components: {
-				Pagination: {
-					build: (a?: any) => any;
-					Templates: {
-						paginationFooter: (a?: any, b?: any) => any;
-					};
-				};
-				BlankPlaceholderBox: {
-					Templates: {
-						blankBox: (a?: any, b?: any) => any;
-					};
-				};
-				SpacePicker: {
-					build: () => any;
-					filterMixedTypesForValues: (a?: any, b?: any) => any;
-				};
-				SpacePagePicker: {
-					build: () => any;
-					setValue: (a?: any, b?: any) => any;
-				};
-				templates: {
-					hiddenField: (a?: any, b?: any) => any;
-				};
-				PagePicker: {
-					build: () => any;
-				};
-				LabelPicker: {
-					build: () => any;
-					templates: {
-						labelResult: (a?: any, b?: any) => any;
-						labelInvalid: (a?: any, b?: any) => any;
-					};
-				};
-				UserGroupSelect2: {
-					avatarWithName: (a?: any, b?: any) => any;
-				};
-				CQL: {
-					Templates: {
-						container: (a?: any, b?: any) => any;
-					};
-					FilterSelect: {
-						Templates: {
-							container: (a?: any, b?: any) => any;
-						};
-					};
-					TypePicker: {
-						templates: {
-							suggestions: (a?: any, b?: any) => any;
-						};
-					};
-					SpaceField: {
-						templates: {
-							archivedSpacesOption: (a?: any, b?: any) => any;
-						};
-					};
-				};
-				CQLFilters: {
-					Templates: {
-						baseFilterField: (a?: any, b?: any) => any;
-					};
-				};
-				DatePicker: {
-					templates: {
-						input: (a?: any, b?: any) => any;
-					};
-				};
-			};
-		};
+				dialogBody: (a?: any, b?: any) => any;
+			}
+		}
+		SharePage: {
+			autocompleteUser: (a?: any) => any;
+			initDialog: (a?: any, b?: any, c?: any) => any;
+		}
 		FileTypesUtils: {
 			getAUIIconFromMime: (a?: any) => any;
 			isImage: (a?: any) => any;
-		};
+		}
 		ViewFileMacro: {
 			Templates: {
 				embeddedFile: (a?: any, b?: any) => any;
@@ -1132,15 +829,10 @@ interface AJSType {
 				overlayEmbeddedFileFileTypeDesc: (a?: any, b?: any) => any;
 				Editor: {
 					viewFilePropertyPanelHeader: (a?: any, b?: any) => any;
-				};
-			};
-		};
+				}
+			}
+		}
 		Editor: {
-			PushedNavUtil: {
-				isInEditPage: () => any;
-				filterPreviewHashChange: () => any;
-				filterPreviewNavigationEvent: () => any;
-			};
 			FileDialog: {
 				FileItemModel: () => any;
 				FileItemView: () => any;
@@ -1158,12 +850,12 @@ interface AJSType {
 					listenToOnce: (a?: any, b?: any, c?: any) => any;
 					bind: (a?: any, b?: any, c?: any) => any;
 					unbind: (a?: any, b?: any, c?: any) => any;
-				};
+				}
 				AttachmentsPanelView: () => any;
 				ExternalPanelView: () => any;
 				SearchPanelView: () => any;
 				FileDialogView: () => any;
-			};
+			}
 			bookmark: string;
 			MODE_RICHTEXT: string;
 			MODE_SOURCE: string;
@@ -1171,10 +863,11 @@ interface AJSType {
 			PREVIEW_OUTPUT_TYPE: string;
 			currentEditMode: {
 				currentEditMode: any;
-			};
+			}
 			contentHasChangedSinceLastSave: boolean;
 			sourceInitialValue: boolean;
-			isPublishing: (a?: any) => any;
+			isSubmitting: boolean;
+			isCancelling: boolean;
 			isLimitedModeEnabled: () => any;
 			overrideBeforeSave: (a?: any) => any;
 			overrideSave: (a?: any) => any;
@@ -1198,8 +891,7 @@ interface AJSType {
 				normal: () => any;
 				recovery: () => any;
 				reset: () => any;
-				cleanup: () => any;
-			};
+			}
 			disableFrame: (a?: any) => any;
 			previewFrameOnload: (a?: any, b?: any) => any;
 			showRichText: (a?: any) => any;
@@ -1224,17 +916,13 @@ interface AJSType {
 			setToolBarInactive: (a?: any) => any;
 			isVisible: () => any;
 			ImageDialog: {
-				beforeShowListeners: {
-					beforeShowListeners: any[];
-				};
-				panelComponent: {
-					panelComponent: any[];
-				};
+				beforeShowListeners: any[];
+				panelComponent: any[];
 				sizeToFit: () => any;
 				defaultInsertImageDialog: () => any;
 				findPanelComponentById: (a?: any) => any;
 				insertImageDialog: (a?: any, b?: any) => any;
-			};
+			}
 			defaultInsertImageDialog: () => any;
 			insertImageDialog: (a?: any, b?: any) => any;
 			Drafts: {
@@ -1251,8 +939,7 @@ interface AJSType {
 				useDraft: () => any;
 				discardDraft: (a?: any) => any;
 				save: (a?: any) => any;
-				getDraftSavingPromise: () => any;
-			};
+			}
 			Toolbar: {
 				Components: {
 					Button: (a?: any) => any;
@@ -1261,22 +948,22 @@ interface AJSType {
 					TextBox: (a?: any) => any;
 					Group: (a?: any, b?: any) => any;
 					SplitGroup: (a?: any, b?: any) => any;
-				};
-			};
+				}
+			}
 			regex: {
 				URL: {
 					exec: (a?: any) => any;
 					test: (a?: any) => any;
-				};
+				}
 				EMAIL: {
 					exec: (a?: any) => any;
 					test: (a?: any) => any;
-				};
-			};
+				}
+			}
 			ImageProps: {
 				init: () => any;
 				registerPanel: (a?: any, b?: any, c?: any, d?: any) => any;
-			};
+			}
 			Adapter: {
 				putCursorAtPostionInElement: (a?: any, b?: any, c?: any) => any;
 				storeCurrentSelectionState: () => any;
@@ -1308,70 +995,29 @@ interface AJSType {
 				getTinyMceBaseUrl: () => any;
 				getMinEditorHeight: () => any;
 				getTinyMceEditorMinHeight: (a?: any) => any;
-			};
-			Autocompleter: {
-				Settings: {};
-				log: (a?: any) => any;
-				Util: {
-					dropdownLink: (a?: any, b?: any, c?: any) => any;
-					getRestData: (a?: any, b?: any, c?: any, d?: any, e?: any, f?: any, g?: any) => any;
-				};
-				Control: (a?: any, b?: any) => any;
-				Manager: {
-					getInputDrivenDropdown: () => any;
-					triggerListener: (a?: any, b?: any) => any;
-					shortcutFired: (a?: any, b?: any) => any;
-					reattach: () => any;
-				};
-			};
-			SearchManager: (a?: any) => any;
-			AutoComplete: {
-				SETTING_DEFAULT: {
-					leadingChar: string;
-					isDataValid: (a?: any) => any;
-					backWords: number;
-					onBeforeDie: () => any;
-					onAfterStart: () => any;
-					onScroll: () => any;
-				};
-				Manager: (a?: any) => any;
-			};
-			LinkAdapter: {
-				setLink: (a?: any) => any;
-				getLink: () => any;
-			};
-			LinkBrowser: {
-				SEARCH_PANEL: string;
-				ATTACHMENTS_PANEL: string;
-				WEBLINK_PANEL: string;
-				ADVANCED_PANEL: string;
-				open: (a?: any) => any;
-				cancel: () => any;
-				LinkInfoPresenter: (a?: any) => any;
-			};
-			CloudAppPaste: (a?: any, b?: any, c?: any) => any;
+			}
 			JiraAnalytics: {
 				events: {
 					paste: {
 						key: string;
-					};
+					}
 					search: {
 						key: string;
-					};
+					}
 					trigger: {
 						key: string;
-					};
+					}
 					customizeColumn: {
 						key: string;
-					};
-				};
+					}
+				}
 				linkTypes: {
 					jqlDirect: string;
 					jql: string;
 					xml: string;
 					rss: string;
 					filter: string;
-				};
+				}
 				getDisplayType: (a?: any) => any;
 				setupAnalyticPanelActionObject: (a?: any, b?: any, c?: any) => any;
 				setupPanelActionProperties: (a?: any, b?: any, c?: any) => any;
@@ -1381,7 +1027,7 @@ interface AJSType {
 				triggerMarkupEvent: (a?: any) => any;
 				triggerPannelTriggerEvent: (a?: any) => any;
 				triggerCustomizeColumnEvent: (a?: any) => any;
-			};
+			}
 			JiraConnector: {
 				warningPopup: (a?: any) => any;
 				closePopup: () => any;
@@ -1394,17 +1040,15 @@ interface AJSType {
 					editorHotKey: string;
 					editorDropdownLink: string;
 					instructionalText: string;
-				};
-				Panels: {
-					Panels: any[];
-				};
+				}
+				Panels: any[];
 				clickConfigApplink: boolean;
 				hotKey: () => any;
 				Panel: () => any;
 				Select2: {
 					getKeyColumnsSelectedOptions: (a?: any) => any;
-				};
-			};
+				}
+			}
 			JiraChart: {
 				close: () => any;
 				edit: (a?: any) => any;
@@ -1418,9 +1062,7 @@ interface AJSType {
 				clearChartContent: (a?: any) => any;
 				loadServers: (a?: any) => any;
 				validateServerSupportedChart: (a?: any) => any;
-				Panels: {
-					Panels: any[];
-				};
+				Panels: any[];
 				Helper: {
 					getSelectedServer: (a?: any) => any;
 					bindingCommonChartElements: (a?: any) => any;
@@ -1433,83 +1075,138 @@ interface AJSType {
 					isNumber: (a?: any) => any;
 					isJqlNotEmpty: (a?: any) => any;
 					populateStatType: (a?: any, b?: any) => any;
-				};
+				}
 				Panel: () => any;
-			};
-		};
-		QuickEdit: {
-			loadingContentTimeout: number;
-			register: (a?: any) => any;
-			disableHandlers: () => any;
-			enableHandlers: () => any;
-			SaveBarBinder: {
-				bind: (a?: any, b?: any) => any;
-			};
-			activateEditor: (a?: any) => any;
-			deactivateEditor: () => any;
-			KeyboardShortcuts: {
-				createShortcut: (a?: any, b?: any) => any;
-			};
-			QuickEditPage: {
-				disable: () => any;
-			};
-			QuickComment: {
-				timeout: number;
-				showLoadingEditorErrorMessage: () => any;
-				preInitialise: () => any;
-				postInitialise: (a?: any) => any;
-				delegatingSaveCommentHandler: (a?: any) => any;
-				reloadPageSaveCommentHandler: (a?: any) => any;
-				ajaxSaveCommentHandler: (a?: any) => any;
-				cancelHandler: () => any;
-				createCommenterParam: (a?: any, b?: any, c?: any) => any;
-				createSaveHandler: (a?: any, b?: any) => any;
-				saveCommentErrorHandler: (a?: any) => any;
-				cancelComment: () => any;
-				proceedWithActivation: () => any;
-				TopLevel: {
-					bindCommentAreaFallbackHandler: () => any;
-					cancelComment: () => any;
-				};
-				Reply: {
-					cancelComment: () => any;
-				};
-				Edit: {
-					cancelComment: () => any;
-				};
-			};
-		};
-		Analytics: {
-			setAnalyticsSource: (a?: any, b?: any) => any;
-			srcRemovedUrl: (a?: any) => any;
-			srcParamValues: (a?: any) => any;
-			srcAttrParamValues: (a?: any) => any;
-			extractAnalyticsData: (a?: any) => any;
-			publish: (a?: any, b?: any) => any;
-			init: () => any;
-		};
-		QuickEditCaptchaManager: (a?: any) => any;
-		Watch: {
-			Templates: {
-				dialogBody: (a?: any, b?: any) => any;
-			};
-		};
-		DialogWizard: (a?: any, b?: any) => any;
-		RoadmapLink: {
-			addCreateLinkPageListener: (a?: any, b?: any) => any;
-		};
+			}
+			LinkAdapter: {
+				setLink: (a?: any) => any;
+				getLink: () => any;
+			}
+			LinkBrowser: {
+				SEARCH_PANEL: string;
+				ATTACHMENTS_PANEL: string;
+				WEBLINK_PANEL: string;
+				ADVANCED_PANEL: string;
+				open: (a?: any) => any;
+				cancel: () => any;
+				LinkInfoPresenter: (a?: any) => any;
+			}
+			Autocompleter: {
+				Settings: {
+				}
+				log: (a?: any) => any;
+				Util: {
+					dropdownLink: (a?: any, b?: any, c?: any) => any;
+					getRestData: (a?: any, b?: any, c?: any, d?: any, e?: any, f?: any, g?: any) => any;
+				}
+				Control: (a?: any, b?: any) => any;
+				Manager: {
+					getInputDrivenDropdown: () => any;
+					triggerListener: (a?: any, b?: any) => any;
+					shortcutFired: (a?: any, b?: any) => any;
+					reattach: () => any;
+				}
+			}
+			SearchManager: (a?: any) => any;
+			CloudAppPaste: (a?: any, b?: any, c?: any) => any;
+			AutoComplete: {
+				SETTING_DEFAULT: {
+					leadingChar: string;
+					isDataValid: (a?: any) => any;
+					backWords: number;
+					onBeforeDie: () => any;
+					onAfterStart: () => any;
+					onScroll: () => any;
+				}
+				Manager: (a?: any) => any;
+			}
+			PushedNavUtil: {
+				isInEditPage: () => any;
+				filterPreviewHashChange: () => any;
+				filterPreviewNavigationEvent: () => any;
+			}
+		}
+		UI: {
+			Components: {
+				Pagination: {
+				}
+				SpacePicker: {
+					build: () => any;
+					filterMixedTypesForValues: (a?: any, b?: any) => any;
+				}
+				SpacePagePicker: {
+					build: () => any;
+					setValue: (a?: any, b?: any) => any;
+				}
+				templates: {
+					hiddenField: (a?: any, b?: any) => any;
+				}
+				PagePicker: {
+					build: () => any;
+				}
+				LabelPicker: {
+					build: () => any;
+					templates: {
+						labelResult: (a?: any, b?: any) => any;
+						labelInvalid: (a?: any, b?: any) => any;
+					}
+				}
+				UserGroupSelect2: {
+					avatarWithName: (a?: any, b?: any) => any;
+				}
+				CQL: {
+					Templates: {
+						container: (a?: any, b?: any) => any;
+					}
+					FilterSelect: {
+						Templates: {
+							container: (a?: any, b?: any) => any;
+						}
+					}
+					TypePicker: {
+						templates: {
+							suggestions: (a?: any, b?: any) => any;
+						}
+					}
+					SpaceField: {
+						templates: {
+							archivedSpacesOption: (a?: any, b?: any) => any;
+						}
+					}
+				}
+				CQLFilters: {
+					Templates: {
+						baseFilterField: (a?: any, b?: any) => any;
+					}
+				}
+				DatePicker: {
+					templates: {
+						input: (a?: any, b?: any) => any;
+					}
+				}
+			}
+		}
+		MacroParameterSerializer: {
+			serialize: (a?: any) => any;
+			deserialize: (a?: any) => any;
+		}
+		PageLoadingIndicator: (a?: any) => any;
+		PageLocation: {
+			get: () => any;
+			set: (a?: any) => any;
+		}
+		Link: {
+			isLink: (a?: any) => any;
+			fromData: (a?: any) => any;
+			fromNode: (a?: any, b?: any) => any;
+			fromSelectedAnchor: (a?: any, b?: any) => any;
+			fromSelection: (a?: any, b?: any, c?: any, d?: any) => any;
+			fromREST: (a?: any) => any;
+			createLinkToNewPage: (a?: any, b?: any) => any;
+			makeExternalLink: (a?: any) => any;
+			isExternalLink: (a?: any) => any;
+		}
 		Roadmap: {
-			Analytics: {
-				insertRoadmap: () => any;
-				createRoadmap: (a?: any) => any;
-				editRoadmap: (a?: any) => any;
-				openBarDialogInEdit: () => any;
-				addDescription: () => any;
-				addPageLinkEditMode: (a?: any) => any;
-				addPageLinkViewMode: (a?: any) => any;
-				openBarDialogInView: () => any;
-				clickPageLink: () => any;
-			};
 			Helper: {
 				getPosXOnMonthTimeline: (a?: any, b?: any) => any;
 				getPosXOnWeekTimeline: (a?: any, b?: any) => any;
@@ -1517,13 +1214,13 @@ interface AJSType {
 				getMonthStartDateByPosition: (a?: any, b?: any) => any;
 				getWeekStartDateByPosition: (a?: any, b?: any) => any;
 				guid: () => any;
-			};
+			}
 			ColorHelper: {
 				resetColorCounts: () => any;
 				findColor: (a?: any) => any;
 				adjustColorCount: (a?: any, b?: any) => any;
 				getColor: () => any;
-			};
+			}
 			DateUtilities: {
 				MILLISECONDS_A_DAY: number;
 				MILLISECONDS_A_WEEK: number;
@@ -1536,63 +1233,384 @@ interface AJSType {
 				calculateDurationInformation: (a?: any) => any;
 				convertToWeekDuration: (a?: any, b?: any) => any;
 				convertToMonthDuration: (a?: any, b?: any) => any;
-			};
+			}
 			FieldUtilities: {
 				fixDatePickerFields: (a?: any) => any;
-			};
-		};
-		CreateJiraContent: {
+			}
+			Analytics: {
+				insertRoadmap: () => any;
+				createRoadmap: (a?: any) => any;
+				editRoadmap: (a?: any) => any;
+				openBarDialogInEdit: () => any;
+				addDescription: () => any;
+				addPageLinkEditMode: (a?: any) => any;
+				addPageLinkViewMode: (a?: any) => any;
+				openBarDialogInView: () => any;
+				clickPageLink: () => any;
+			}
+		}
+		RoadmapLink: {
+			addCreateLinkPageListener: (a?: any, b?: any) => any;
+		}
+		TeamCalendars: {
 			Dialogs: {
-				appendDialogTarget: (a?: any, b?: any) => any;
-			};
-		};
-		Request: {
-			Access: {
-				usernameLink: (a?: any, b?: any) => any;
-				loading: (a?: any, b?: any) => any;
-				dialog: (a?: any, b?: any) => any;
-			};
-		};
-		Grant: {
-			Access: {
-				dialog: (a?: any, b?: any) => any;
-				usernameLink: (a?: any, b?: any) => any;
-			};
-		};
-		MacroParameterSerializer: {
-			serialize: (a?: any) => any;
-			deserialize: (a?: any) => any;
-		};
-		PageLocation: {
-			get: () => any;
-			set: (a?: any) => any;
-		};
-		Link: {
-			isLink: (a?: any) => any;
-			fromData: (a?: any) => any;
-			fromNode: (a?: any, b?: any) => any;
-			fromSelectedAnchor: (a?: any, b?: any) => any;
-			fromSelection: (a?: any, b?: any, c?: any, d?: any) => any;
-			fromREST: (a?: any) => any;
-			createLinkToNewPage: (a?: any, b?: any) => any;
-			makeExternalLink: (a?: any) => any;
-			isExternalLink: (a?: any) => any;
-		};
+				getAddDialogForMacro: (a?: any) => any;
+				getSubCalendarCreateDialog: (a?: any, b?: any) => any;
+				getTimeZoneSetupDialog: (a?: any) => any;
+				getSubCalendarImportDialog: (a?: any) => any;
+				getCustomEventTypeEdit: (a?: any, b?: any) => any;
+				getEditEventDialog: (a?: any, b?: any, c?: any, d?: any) => any;
+				getSubCalendarEditDialog: (a?: any, b?: any, c?: any, d?: any, e?: any) => any;
+				getAddDialog: (a?: any, b?: any) => any;
+				getSubCalendarSubscribeDialog: (a?: any) => any;
+			}
+			hasJiraLink: number;
+			getRestBaseUrl: () => any;
+			HelpTip: (a?: any) => any;
+			Templates: {
+				tipContent: (a?: any, b?: any) => any;
+				tipClose: (a?: any, b?: any) => any;
+				confirmEventDelete: (a?: any, b?: any) => any;
+				confirmRecurringEventDelete: (a?: any, b?: any) => any;
+				confirmCustomEventNameDelete: (a?: any, b?: any) => any;
+				userTimezoneSetup: (a?: any, b?: any) => any;
+				importSubcalendar: (a?: any, b?: any) => any;
+				editCustomEventType: (a?: any, b?: any) => any;
+				eventEdit: (a?: any, b?: any) => any;
+				Fields: {
+					text: (a?: any, b?: any) => any;
+					inforReminderLabel: (a?: any, b?: any) => any;
+					bodyInforReminderLabel: (a?: any, b?: any) => any;
+					textarea: (a?: any, b?: any) => any;
+					page: (a?: any, b?: any) => any;
+					when: (a?: any, b?: any) => any;
+					repeats: (a?: any, b?: any) => any;
+					user: (a?: any, b?: any) => any;
+					userSelection: (a?: any, b?: any) => any;
+					serverSelector: (a?: any, b?: any) => any;
+					projectSelector: (a?: any, b?: any) => any;
+				}
+				viewCustomEventType: (a?: any, b?: any) => any;
+				editCalendarEventTypes: (a?: any, b?: any) => any;
+				calendarTourContent: (a?: any, b?: any) => any;
+				shareSubCalendar: (a?: any, b?: any) => any;
+				subCalendarPrivateUrlSubscribe: (a?: any, b?: any) => any;
+				subCalendarBasicAuthSubscribe: (a?: any, b?: any) => any;
+				addDialog: (a?: any, b?: any) => any;
+				addInlineDialog: (a?: any, b?: any) => any;
+				editInternalSubcalendar: (a?: any, b?: any) => any;
+				nonSpaceCalendarsDialog: (a?: any, b?: any) => any;
+				nonSpaceCalendarEntry: (a?: any, b?: any) => any;
+				iconEventTypePrinting: (a?: any, b?: any) => any;
+				iconSubCalendarPrinting: (a?: any, b?: any) => any;
+				iconEventTimelinePrinting: (a?: any, b?: any) => any;
+				renderImagePrinting: (a?: any, b?: any) => any;
+				iconCustomPrinting: (a?: any, b?: any) => any;
+				timeZoneDropDown: (a?: any, b?: any) => any;
+				subCalendarPanelEntry: (a?: any, b?: any) => any;
+				customEventTypePanelEntry: (a?: any, b?: any) => any;
+				childSubCalendarPanelEntry: (a?: any, b?: any) => any;
+				subCalendarMenu: (a?: any, b?: any) => any;
+				customEventTypeMenu: (a?: any, b?: any) => any;
+				childSubCalendarMenu: (a?: any, b?: any) => any;
+				subCalendarPopupMenu: (a?: any, b?: any) => any;
+				subCalendarColourGrid: (a?: any, b?: any) => any;
+				editLocalCalendar: (a?: any, b?: any) => any;
+				editPeopleCalendar: (a?: any, b?: any) => any;
+				editSubscriptionSubcalendar: (a?: any, b?: any) => any;
+				hiddenJiraFields: (a?: any, b?: any) => any;
+				editJiraCalendar: (a?: any, b?: any) => any;
+				editJiraSubCalendarDurations: (a?: any, b?: any) => any;
+				subCalendarFeatures: (a?: any, b?: any) => any;
+				resetSubCalendarPrivateUrl: (a?: any, b?: any) => any;
+				restrictSubCalendar: (a?: any, b?: any) => any;
+				removeSubCalendar: (a?: any, b?: any) => any;
+				confirmRemoveSubCalendar: (a?: any, b?: any) => any;
+				confirmRemoveJiraEvents: (a?: any, b?: any) => any;
+				calendarSearchResultTable: (a?: any, b?: any) => any;
+				calendarSearchResult: (a?: any, b?: any) => any;
+				requireOauthMessage: (a?: any, b?: any) => any;
+				timelineEventContentSingleInvitee: (a?: any, b?: any) => any;
+				timelineEventContent: (a?: any, b?: any) => any;
+				timelineEventContentWithEventTypeIcon: (a?: any, b?: any) => any;
+				defaultTimelineEventContent: (a?: any, b?: any) => any;
+				subscribeDialog: (a?: any, b?: any) => any;
+				eventPopupIssue: (a?: any, b?: any) => any;
+				eventPopupVersion: (a?: any, b?: any) => any;
+				eventPopupSprint: (a?: any, b?: any) => any;
+				eventPopup: (a?: any, b?: any) => any;
+				upcomingEvents: (a?: any, b?: any) => any;
+			}
+			panelEditCalendar: {
+				GENERAL_PANEL: number;
+				EVENT_TYPE_PANEL: number;
+				RESTRICTION_PANEL: number;
+				SHARE_EMBEDDED_PANEL: number;
+				SUBSCRIBE_PANEL: number;
+			}
+			ajaxTimeout: number;
+			isCalendarSearchDisabled: number;
+			getParameter: (a?: any, b?: any) => any;
+			getParameters: (a?: any) => any;
+			setParameter: (a?: any, b?: any, c?: any) => any;
+			getSortedSubCalendarsByTypeAndName: (a?: any) => any;
+			getAsArray: () => any;
+			populateTimeZoneDropDown: (a?: any, b?: any, c?: any, d?: any) => any;
+			getCalendarServiceBaseUrl: (a?: any) => any;
+			mergeSubCalendarObjectsToArray: (a?: any) => any;
+			isRequireOauth: (a?: any) => any;
+			setFieldErrors: (a?: any, b?: any) => any;
+			showHTMLGenericError: (a?: any, b?: any, c?: any, d?: any) => any;
+			setGenericErrors: (a?: any, b?: any, c?: any) => any;
+			showAjaxError: (a?: any, b?: any, c?: any, d?: any, e?: any, f?: any) => any;
+			getUserTimeZone: () => any;
+			shouldShowTimezoneSetup: () => any;
+			suppressMessage: (a?: any, b?: any, c?: any) => any;
+			fireEventForAnalytics: (a?: any, b?: any) => any;
+			isPDLEnabled: () => any;
+			isJiraSubCalendar: (a?: any) => any;
+			isSubscriptionSubCalendar: (a?: any) => any;
+			isInternalSubscriptionSubCalendar: (a?: any) => any;
+			isDummySubscriptionParentSubCalendar: (a?: any) => any;
+			hasRestriction: (a?: any) => any;
+			updateDateDisplay: (a?: any, b?: any) => any;
+			showCalendarPopupHaveAnEmptySubcalendar: (a?: any, b?: any) => any;
+			disableButton: (a?: any, b?: any) => any;
+			enableButton: (a?: any, b?: any) => any;
+			isJiraEventStream: (a?: any) => any;
+			isCustomEventType: (a?: any) => any;
+			isEventTypeSanbox: (a?: any) => any;
+			isJiraEvent: (a?: any) => any;
+			isJiraType: (a?: any) => any;
+			showInforReminder: (a?: any) => any;
+			getPeriodReminderEventTypeSanboxOrJira: (a?: any, b?: any) => any;
+			getCalendarContext: (a?: any) => any;
+			isSingleCalendarView: (a?: any) => any;
+			isSpaceCalendarView: (a?: any) => any;
+			isEmbeddedCalendarView: (a?: any) => any;
+			isMyCalendarView: (a?: any) => any;
+			putCalendarContextParams: (a?: any) => any;
+			toggleNoCalendarPage: (a?: any) => any;
+			isValidLicense: () => any;
+			getParamsFromUrl: () => any;
+			isCalendarNameTruncated: (a?: any) => any;
+			getEditCalendarDialogHelper: (a?: any, b?: any, c?: any) => any;
+			subcalendar: {
+				other: {
+					getDialog: () => any;
+					weight: number;
+					typeName: string;
+				}
+				travel: {
+					getDialog: () => any;
+					weight: number;
+					typeName: string;
+				}
+				leaves: {
+					getDialog: () => any;
+					weight: number;
+					typeName: string;
+				}
+				birthdays: {
+					getDialog: () => any;
+					weight: number;
+					typeName: string;
+				}
+				'jira-agile-sprint': {
+					getDialog: () => any;
+					weight: number;
+					typeName: string;
+				}
+				'jira-project-releases': {
+					getDialog: () => any;
+					weight: number;
+					typeName: string;
+				}
+				'jira-issue-dates': {
+					getDialog: () => any;
+					weight: number;
+					typeName: string;
+				}
+				custom: {
+					getDialog: () => any;
+					weight: number;
+					typeName: string;
+				}
+				parent: {
+					getDialog: (a?: any, b?: any, c?: any) => any;
+					weight: number;
+					typeName: string;
+				}
+				jira: {
+					weight: number;
+					typeName: string;
+					getDialog: () => any;
+				}
+				subscription: {
+					getDialog: (a?: any, b?: any, c?: any) => any;
+					weight: number;
+					typeName: string;
+				}
+				'internal-subscription': {
+					cid: string;
+					options: {
+					}
+					$el: {
+						0: {
+						}
+						length: number;
+					}
+					el: {
+					}
+				}
+			}
+			getRemoveJiraEventsDialog: (a?: any, b?: any, c?: any) => any;
+			getTimelineAdapter: (a?: any, b?: any, c?: any, d?: any) => any;
+			LocalStorage: {
+				getItem: (a?: any) => any;
+				setItem: (a?: any, b?: any, c?: any) => any;
+			}
+			CalendarTour: () => any;
+		}
+		InlineTasks: {
+			Util: {
+				NODE_TYPE: {
+					ELEMENT_NODE: number;
+					ATTRIBUTE_NODE: number;
+					TEXT_NODE: number;
+					CDATA_SECTION_NODE: number;
+					ENTITY_REFERENCE_NODE: number;
+					ENTITY_NODE: number;
+					PROCESSING_INSTRUCTION_NODE: number;
+					COMMENT_NODE: number;
+					DOCUMENT_NODE: number;
+					DOCUMENT_TYPE_NODE: number;
+					DOCUMENT_FRAGMENT_NODE: number;
+					NOTATION_NODE: number;
+				}
+				KEY: {
+					BACKSPACE: number;
+					SPACE: number;
+					PAGEUP: number;
+					PAGEDOWN: number;
+					END: number;
+					HOME: number;
+					INS: number;
+					TAB: number;
+					ENTER: number;
+					SHIFT: number;
+					CTRL: number;
+					ALT: number;
+					ESCAPE: number;
+					LEFT: number;
+					UP: number;
+					RIGHT: number;
+					DOWN: number;
+					DELETE: number;
+					META: number;
+				}
+				addContentEditableIfApplicable: (a?: any) => any;
+			}
+			DateUtil: {
+				PATTERN_INSERTING: string;
+				PATTERN_LOZENGE: string;
+				PATTERN_INSIDE_TIME_ELE: string;
+				convertDateIntoHtml: (a?: any, b?: any, c?: any, d?: any) => any;
+				insertDateIntoCurrentCursor: (a?: any, b?: any, c?: any, d?: any, e?: any) => any;
+				parse: (a?: any, b?: any) => any;
+				format: (a?: any, b?: any) => any;
+				guessPartialDate: (a?: any, b?: any) => any;
+				datepicker: {
+					POSITION_ABOVE: boolean;
+					POSITION_BELOW: boolean;
+					POSITION_RIGHT: boolean;
+					POSITION_LEFT: boolean;
+					dropDownStillFitsVertically: (a?: any, b?: any, c?: any) => any;
+					dropDownStillFitsHorizontally: (a?: any, b?: any, c?: any) => any;
+					getPreferredHorizontalPosition: (a?: any, b?: any) => any;
+					getPreferredVerticalPosition: (a?: any, b?: any) => any;
+					calculateDatepickerPosition: (a?: any) => any;
+					getHintTextOfDatePicker: (a?: any) => any;
+					create: (a?: any) => any;
+				}
+				PATTERN_INSERTING_ALTERNATE: string;
+			}
+		}
 		DragAndDrop: {
 			UploadClientController: (a?: any) => any;
 			UploadClient: (a?: any) => any;
-		};
-	};
+		}
+		FeatureDiscovery: {
+			forPlugin: (a?: any, b?: any) => any;
+		}
+		DialogWizard: (a?: any, b?: any) => any;
+		Blueprints: {
+			Common: {
+				Index: {
+					detailsSummaryMacro: (a?: any, b?: any) => any;
+					createFromTemplateMacro: (a?: any, b?: any) => any;
+				}
+			}
+			Meeting: {
+				Notes: {
+					howTo: (a?: any, b?: any) => any;
+				}
+			}
+		}
+		Request: {
+			Access: {
+				result: (a?: any, b?: any) => any;
+				usernameLink: (a?: any, b?: any) => any;
+				loading: (a?: any, b?: any) => any;
+			}
+		}
+		Grant: {
+			Access: {
+				dialog: (a?: any, b?: any) => any;
+				result: (a?: any, b?: any) => any;
+				usernameLink: (a?: any, b?: any) => any;
+			}
+		}
+		EditorLoader: {
+			getPreloadContainer: () => any;
+			getEditorPreloadMarkup: () => any;
+			resourcesLoaded: () => any;
+			loadingTimeout: number;
+			isEditorActive: () => any;
+			load: (a?: any, b?: any) => any;
+			getEditorForm: () => any;
+		}
+		BlockAndBuffer: {
+			block: (a?: any) => any;
+		}
+		CommentDisplayManager: {
+			addComment: (a?: any, b?: any, c?: any, d?: any) => any;
+			addOrUpdateComment: (a?: any, b?: any, c?: any, d?: any) => any;
+			isVisible: () => any;
+			hasComments: () => any;
+			commentCount: () => any;
+			clearFocus: () => any;
+			getCommentNode: (a?: any) => any;
+			getParentId: (a?: any) => any;
+		}
+		SourceEditor: {
+			Templates: {
+				toolbar: (a?: any, b?: any) => any;
+				sourceEditorPlaceholder: (a?: any, b?: any) => any;
+				sourceEditorFooterLeftToolbar: (a?: any, b?: any) => any;
+			}
+		}
+		Dashboard: {
+			reloadPopularStream: (a?: any) => any;
+			showSpinner: (a?: any) => any;
+		}
+	}
 	Position: {
 		spaceAboveBelow: (a?: any, b?: any) => any;
-	};
+	}
 	inputDrivenDropdown: (a?: any) => any;
-	followCallbacks: {
-		followCallbacks: any[];
-	};
-	favouriteCallbacks: {
-		favouriteCallbacks: any[];
-	};
+	followCallbacks: any[];
+	favouriteCallbacks: any[];
 	moreLinkClickHandler: (a?: any) => any;
 	safe: {
 		ajax: (a?: any) => any;
@@ -1600,12 +1618,12 @@ interface AJSType {
 		getScript: (a?: any, b?: any) => any;
 		getJSON: (a?: any, b?: any, c?: any) => any;
 		post: (a?: any, b?: any, c?: any, d?: any) => any;
-	};
+	}
 	safeAjax: (a?: any) => any;
 	General: {
 		getContextPath: () => any;
 		getBaseUrl: () => any;
-	};
+	}
 	trim: (a?: any) => any;
 	renderTemplate: (a?: any, b?: any) => any;
 	loadTemplatesFromUrl: (a?: any, b?: any) => any;
@@ -1628,7 +1646,7 @@ interface AJSType {
 			add: (a?: any, b?: any) => any;
 			remove: (a?: any, b?: any, c?: any) => any;
 			list: (a?: any, b?: any) => any;
-		};
+		}
 		setLabelError: (a?: any) => any;
 		parseLabelStringToArray: (a?: any) => any;
 		getLabelLink: (a?: any, b?: any) => any;
@@ -1637,102 +1655,22 @@ interface AJSType {
 		bindOpenDialog: (a?: any) => any;
 		openDialog: (a?: any) => any;
 		updateDialogLabelList: (a?: any) => any;
-	};
+	}
 	getWindowQueryParams: () => any;
 	Tooltip: (a?: any) => any;
 	bindEvt: () => any;
 	triggerEvt: () => any;
 	triggerEvtForInst: () => any;
 	RestfulTable: () => any;
-	dialog2: (a?: any, b?: any) => any;
-	tablessortable: {
-		setup: () => any;
-		setTableSortable: (a?: any) => any;
-	};
-	HelpTip: (a?: any) => any;
-	Templates: {
-		HelpTip: {
-			tipContent: (a?: any, b?: any) => any;
-			tipDismiss: (a?: any, b?: any) => any;
-		};
-	};
-	progressBars: {
-		update: (a?: any, b?: any) => any;
-		setIndeterminate: (a?: any) => any;
-	};
-	DragAndDropUtils: {
-		defaultMimeType: string;
-		base: {
-			base: any[];
-		};
-		bindDragEnter: (a?: any, b?: any) => any;
-		bindDragOver: (a?: any, b?: any) => any;
-		bindDragLeave: (a?: any, b?: any) => any;
-		bindDrop: (a?: any, b?: any) => any;
-		niceSize: (a?: any) => any;
-		ieDragEnterAndDragOverCallbackWrapper: (a?: any) => any;
-		safariDragOverCallbackWrapper: (a?: any) => any;
-		mozillaDropCallbackWrapper: (a?: any) => any;
-		firefox35DragEnterAndOverCallbackWrapper: (a?: any) => any;
-		firefox35FileDataInEvent: (a?: any) => any;
-		stopPropagation: (a?: any) => any;
-		preventDefault: (a?: any) => any;
-		isFireFox35OrLater: () => any;
-		isFireFox30: () => any;
-		enableDropZoneOn: (a?: any, b?: any) => any;
-	};
-	ObservableArrayList: () => any;
-	DragAndDropProgressDialog: (a?: any) => any;
-	DragAndDrop: {
-		Templates: {
-			fileStatus: (a?: any, b?: any) => any;
-			uploadFileStatusContainer: (a?: any, b?: any) => any;
-			uploadFileStatusSuccessIcon: (a?: any, b?: any) => any;
-			uploadFileStatusProgressMessage: (a?: any, b?: any) => any;
-			dropZone: (a?: any, b?: any) => any;
-			dragOverlay: (a?: any, b?: any) => any;
-			dragAndDropTip: (a?: any, b?: any) => any;
-		};
-	};
-	UploadUtils: {
-		ErrorCode: {
-			FILE_IS_A_FOLDER_ERROR: number;
-		};
-		filterFiles: (a?: any, b?: any, c?: any) => any;
-	};
 	InlineDialog2: () => any;
-	EventQueue: {
-		EventQueue: any[];
-	};
-	Analytics: {
-		triggerPrivacyPolicySafeEvent: (a?: any, b?: any) => any;
-	};
-	Popups: {
-		DisplayController: {
-			request: (a?: any) => any;
-			render: () => any;
-		};
-	};
-	versionDetails: {
-		major: number;
-		minor: number;
-		bugfix: number;
-		is58: boolean;
-		is59: boolean;
-	};
-	JiraIssues: {
-		Remote: {};
-		bindOAuthLink: (a?: any, b?: any) => any;
-		getOAuthRealm: (a?: any) => any;
-	};
-	BigPipe: {
-		metrics: {
-			pageEnd: number;
-			isBigPipeEnabled: boolean;
-		};
-	};
-	AppLinksInitialisationBinder: (a?: any) => any;
+	sidebar: (a?: any, b?: any) => any;
 	DatePicker: (a?: any, b?: any) => any;
+	dialog2: (a?: any, b?: any) => any;
+	SummaryHelper: {
+		getCurrentParams: (a?: any) => any;
+		getParam: (a?: any, b?: any) => any;
+		updateMacro: (a?: any, b?: any, c?: any, d?: any) => any;
+	}
 	MacroBrowser: {
 		ParameterFields: {
 			updateDependencies: (a?: any, b?: any, c?: any) => any;
@@ -1744,31 +1682,31 @@ interface AJSType {
 			string: (a?: any, b?: any) => any;
 			boolean: (a?: any, b?: any) => any;
 			enum: (a?: any, b?: any) => any;
-		};
+		}
 		Field: (a?: any, b?: any, c?: any) => any;
 		activateSmartFieldsAttachmentsOnPage: (a?: any, b?: any) => any;
 		Utils: {
 			makeDefaultKey: () => any;
-		};
+		}
 		Editor: {
 			loadMacroInBrowser: (a?: any) => any;
 			getMacroParametersFromForm: (a?: any) => any;
 			getMacroDefinitionFromForm: (a?: any) => any;
 			processRequiredParameters: () => any;
-		};
+		}
 		Preview: {
 			previewMacro: (a?: any, b?: any) => any;
 			removePreviewContainer: () => any;
-		};
+		}
 		Model: {
 			loadMacros: (a?: any) => any;
 			transformMetaDataDefault: (a?: any) => any;
-		};
+		}
 		Rest: {
 			loadMacroMetadata: (a?: any) => any;
 			fetchMacroMetadataDetails: (a?: any) => any;
 			fetchMacroPreviewData: (a?: any) => any;
-		};
+		}
 		UI: {
 			createDialog: (a?: any) => any;
 			showBrowserSpinner: (a?: any) => any;
@@ -1777,59 +1715,256 @@ interface AJSType {
 			enableSaveButton: (a?: any) => any;
 			focusOnMacroDetailsFirstInput: () => any;
 			setHelpLink: (a?: any, b?: any) => any;
-		};
+		}
 		reset: () => any;
 		getMacroJsOverride: (a?: any) => any;
 		setMacroJsOverride: (a?: any, b?: any) => any;
 		Macros: {
-			code: {};
+			jira: {
+				opener: (a?: any) => any;
+			}
+			jiraissues: {
+				opener: (a?: any) => any;
+			}
+			jirachart: {
+				opener: (a?: any) => any;
+			}
 			viewdoc: {
-				fileTypes: {
-					fileTypes: any[];
-				};
-			};
+				fileTypes: any[];
+			}
 			viewpdf: {
-				fileTypes: {
-					fileTypes: any[];
-				};
-			};
+				fileTypes: any[];
+			}
 			viewxls: {
-				fileTypes: {
-					fileTypes: any[];
-				};
-			};
+				fileTypes: any[];
+			}
 			viewppt: {
-				fileTypes: {
-					fileTypes: any[];
-				};
-			};
+				fileTypes: any[];
+			}
 			viewfile: {
 				updateSelectedMacro: (a?: any) => any;
-			};
-			'create-from-template': {
-				fields: {
-					spacekey: {
-						spaceKey: (a?: any) => any;
-					};
-				};
-				beforeParamsSet: (a?: any, b?: any) => any;
-				beforeParamsRetrieved: (a?: any, b?: any, c?: any) => any;
-			};
+			}
+			'pivot-table': {
+				pivotTableMacro: {
+					tables: any[];
+					tableColumns: any[];
+					columnSelect: {
+						columnSelect: any;
+					}
+					rowSelect: {
+						rowSelect: any;
+					}
+					aggregateSelect: {
+						aggregateSelect: any;
+					}
+					tfBody: string;
+					typeParams: any[];
+					columnParams: any[];
+					rowParams: any[];
+					aggregateParams: any[];
+					sortColumns: any[];
+					gotBody: boolean;
+				}
+			}
+			'table-chart': {
+				tableChartMacro: {
+					tableChartMacro: any;
+				}
+			}
+			'table-filter': {
+				tableFilterMacro: {
+					tables: any[];
+					iconTables: any[];
+					tableColumns: any[];
+					sortColumns: any[];
+					columnSelect: {
+						columnSelect: any;
+					}
+					userfilterSelect: {
+						userfilterSelect: any;
+					}
+					numberfilterSelect: {
+						numberfilterSelect: any;
+					}
+					datefilterSelect: {
+						datefilterSelect: any;
+					}
+					iconfilterSelect: {
+						iconfilterSelect: any;
+					}
+					sortSelect: {
+						sortSelect: any;
+					}
+					columnParams: any[];
+					userfilterParams: any[];
+					numberfilterParams: any[];
+					datefilterParams: any[];
+					iconfilterParams: any[];
+					sortParams: any[];
+					dateFormatInput: {
+						dateFormatInput: any;
+					}
+					dateFormatContainer: {
+						dateFormatContainer: any;
+					}
+					separatorContainer: {
+						separatorContainer: any;
+					}
+					supportOldSize: boolean;
+					tfBody: string;
+					defaults: {
+					}
+					widths: {
+					}
+					inverse: {
+					}
+					gotBody: boolean;
+					order: {
+					}
+					labels: {
+					}
+					totalRow: any[];
+				}
+			}
+			stashincludebyfilepath: {
+			}
+			stashincludebyantglob: {
+			}
+			stashopenpullrequests: {
+			}
+			stashbranches: {
+			}
+			stashcommits: {
+			}
+			code: {
+			}
+			'button-handy': {
+			}
+			'status-handy': {
+			}
+			timestamp: {
+			}
+			'handy-reminder': {
+			}
+			'handy-carousel': {
+			}
+			'social-handy': {
+			}
+			multimedia: {
+				fileTypes: any[];
+			}
+			sql: {
+			}
+			'sql-query': {
+			}
+			'sql-file': {
+			}
 			'tasks-report-macro': {
 				fields: {
 					string: {
 						spaceAndPage: (a?: any) => any;
-					};
-				};
+					}
+				}
 				beforeParamsSet: (a?: any) => any;
 				beforeParamsRetrieved: (a?: any) => any;
-			};
+			}
+			'view-git-file': {
+			}
+			'easy-form': {
+				fields: {
+					string: {
+						'source-page-id': (a?: any, b?: any) => any;
+					}
+				}
+			}
+			'create-from-template': {
+				fields: {
+					spacekey: {
+						spaceKey: (a?: any) => any;
+					}
+				}
+				beforeParamsSet: (a?: any, b?: any) => any;
+				beforeParamsRetrieved: (a?: any, b?: any, c?: any) => any;
+			}
 			roadmap: {
 				opener: (a?: any) => any;
-			};
+			}
 			'view-file': {
 				opener: (a?: any) => any;
-			};
+			}
+			gliffy: {
+				opener: (a?: any) => any;
+			}
+			'cover-stories': {
+				opener: (a?: any) => any;
+			}
+			'news-teaser': {
+				beforeParamsSet: (a?: any) => any;
+				beforeParamsRetrieved: (a?: any) => any;
+			}
+			'corporate-news-feed': {
+				beforeParamsSet: (a?: any) => any;
+				beforeParamsRetrieved: (a?: any) => any;
+				fields: {
+					string: {
+						newsSource: (a?: any) => any;
+						numPostsDisplayed: () => any;
+					}
+				}
+			}
+			'personal-news-feed': {
+				beforeParamsSet: (a?: any) => any;
+				beforeParamsRetrieved: (a?: any) => any;
+				fields: {
+					string: {
+						numPostsDisplayed: () => any;
+					}
+				}
+			}
+			'web-feed': {
+				beforeParamsSet: (a?: any) => any;
+				beforeParamsRetrieved: (a?: any) => any;
+				fields: {
+					string: {
+						feedSource: (a?: any) => any;
+						numPostsDisplayed: () => any;
+					}
+				}
+			}
+			profile: {
+				beforeParamsSet: (a?: any) => any;
+				beforeParamsRetrieved: (a?: any) => any;
+			}
+			'custom-user-list': {
+				beforeParamsSet: (a?: any) => any;
+				beforeParamsRetrieved: (a?: any, b?: any, c?: any) => any;
+			}
+			'custom-user-search': {
+				beforeParamsSet: (a?: any) => any;
+				beforeParamsRetrieved: (a?: any, b?: any, c?: any) => any;
+			}
+			'my-contacts-macro': {
+				beforeParamsSet: (a?: any) => any;
+				beforeParamsRetrieved: (a?: any, b?: any, c?: any) => any;
+			}
+			'join-event': {
+				fields: {
+					string: (a?: any, b?: any) => any;
+					int: (a?: any, b?: any) => any;
+					boolean: (a?: any, b?: any) => any;
+				}
+				beforeParamsSet: (a?: any) => any;
+				beforeParamsRetrieved: (a?: any, b?: any, c?: any) => any;
+			}
+			'event-calendar': {
+				beforeParamsSet: (a?: any) => any;
+				fields: {
+					boolean: (a?: any, b?: any) => any;
+				}
+			}
+			'upcoming-events': {
+				beforeParamsSet: (a?: any) => any;
+			}
 			gadget: {
 				postPreview: (a?: any, b?: any) => any;
 				beforeParamsSet: (a?: any, b?: any) => any;
@@ -1837,31 +1972,35 @@ interface AJSType {
 				manipulateMarkup: (a?: any) => any;
 				getMacroDetailsFromSelectedMacro: (a?: any, b?: any) => any;
 				beforeParamsRetrieved: (a?: any, b?: any, c?: any) => any;
-			};
-			jira: {
-				opener: (a?: any) => any;
-			};
-			jiraissues: {
-				opener: (a?: any) => any;
-			};
-			jirachart: {
-				opener: (a?: any) => any;
-			};
-			multimedia: {
-				fileTypes: {
-					fileTypes: any[];
-				};
-			};
-		};
+			}
+			globaltimeline: {
+				fields: {
+					spacekey: (a?: any) => any;
+					int: (a?: any) => any;
+				}
+				beforeParamsSet: (a?: any) => any;
+				beforeParamsRetrieved: (a?: any) => any;
+			}
+			'questionslist-macro': {
+				beforeParamsRetrieved: (a?: any, b?: any, c?: any) => any;
+			}
+		}
 		hasInit: boolean;
-		metadataList: {
-			metadataList: any[];
-		};
+		metadataList: any[];
 		aliasMap: {
+			'bitbucketserver-branches': string;
+			'space-calendar': string;
+			'team-calendar': string;
+			bereichsfilter: string;
 			'web-widget': string;
+			'bitbucketserver-includebyantglob': string;
 			'fav-pages': string;
-			'spaces-list': string;
+			trademark: string;
 			dynamictasklist: string;
+			servicemark: string;
+			'bitbucketserver-openpullrequests': string;
+			'bitbucketserver-commits': string;
+			'bitbucketserver-includebyfilepath': string;
 			news: string;
 			blogs: string;
 			blogposts: string;
@@ -1877,8 +2016,10 @@ interface AJSType {
 			msn: string;
 			sametime: string;
 			skypeme: string;
-		};
-		fields: {};
+			'spaces-list': string;
+		}
+		fields: {
+		}
 		processRequiredParameters: () => any;
 		paramChanged: () => any;
 		loadMacroInBrowser: () => any;
@@ -1905,23 +2046,14 @@ interface AJSType {
 		setWhitelist: (a?: any) => any;
 		preLoadMacro: () => any;
 		initData: {
-			macros: {
-				macros: any[];
-			};
+			macros: any[];
 			insertTitle: string;
 			editTitle: string;
-			categories: {
-				categories: any[];
-			};
+			categories: any[];
 			title: string;
-		};
-	};
+		}
+	}
 	Editor: {
-		PushedNavUtil: {
-			isInEditPage: () => any;
-			filterPreviewHashChange: () => any;
-			filterPreviewNavigationEvent: () => any;
-		};
 		FileDialog: {
 			FileItemModel: () => any;
 			FileItemView: () => any;
@@ -1939,12 +2071,12 @@ interface AJSType {
 				listenToOnce: (a?: any, b?: any, c?: any) => any;
 				bind: (a?: any, b?: any, c?: any) => any;
 				unbind: (a?: any, b?: any, c?: any) => any;
-			};
+			}
 			AttachmentsPanelView: () => any;
 			ExternalPanelView: () => any;
 			SearchPanelView: () => any;
 			FileDialogView: () => any;
-		};
+		}
 		bookmark: string;
 		MODE_RICHTEXT: string;
 		MODE_SOURCE: string;
@@ -1952,10 +2084,11 @@ interface AJSType {
 		PREVIEW_OUTPUT_TYPE: string;
 		currentEditMode: {
 			currentEditMode: any;
-		};
+		}
 		contentHasChangedSinceLastSave: boolean;
 		sourceInitialValue: boolean;
-		isPublishing: (a?: any) => any;
+		isSubmitting: boolean;
+		isCancelling: boolean;
 		isLimitedModeEnabled: () => any;
 		overrideBeforeSave: (a?: any) => any;
 		overrideSave: (a?: any) => any;
@@ -1979,8 +2112,7 @@ interface AJSType {
 			normal: () => any;
 			recovery: () => any;
 			reset: () => any;
-			cleanup: () => any;
-		};
+		}
 		disableFrame: (a?: any) => any;
 		previewFrameOnload: (a?: any, b?: any) => any;
 		showRichText: (a?: any) => any;
@@ -2005,17 +2137,13 @@ interface AJSType {
 		setToolBarInactive: (a?: any) => any;
 		isVisible: () => any;
 		ImageDialog: {
-			beforeShowListeners: {
-				beforeShowListeners: any[];
-			};
-			panelComponent: {
-				panelComponent: any[];
-			};
+			beforeShowListeners: any[];
+			panelComponent: any[];
 			sizeToFit: () => any;
 			defaultInsertImageDialog: () => any;
 			findPanelComponentById: (a?: any) => any;
 			insertImageDialog: (a?: any, b?: any) => any;
-		};
+		}
 		defaultInsertImageDialog: () => any;
 		insertImageDialog: (a?: any, b?: any) => any;
 		Drafts: {
@@ -2032,8 +2160,7 @@ interface AJSType {
 			useDraft: () => any;
 			discardDraft: (a?: any) => any;
 			save: (a?: any) => any;
-			getDraftSavingPromise: () => any;
-		};
+		}
 		Toolbar: {
 			Components: {
 				Button: (a?: any) => any;
@@ -2042,22 +2169,22 @@ interface AJSType {
 				TextBox: (a?: any) => any;
 				Group: (a?: any, b?: any) => any;
 				SplitGroup: (a?: any, b?: any) => any;
-			};
-		};
+			}
+		}
 		regex: {
 			URL: {
 				exec: (a?: any) => any;
 				test: (a?: any) => any;
-			};
+			}
 			EMAIL: {
 				exec: (a?: any) => any;
 				test: (a?: any) => any;
-			};
-		};
+			}
+		}
 		ImageProps: {
 			init: () => any;
 			registerPanel: (a?: any, b?: any, c?: any, d?: any) => any;
-		};
+		}
 		Adapter: {
 			putCursorAtPostionInElement: (a?: any, b?: any, c?: any) => any;
 			storeCurrentSelectionState: () => any;
@@ -2089,70 +2216,29 @@ interface AJSType {
 			getTinyMceBaseUrl: () => any;
 			getMinEditorHeight: () => any;
 			getTinyMceEditorMinHeight: (a?: any) => any;
-		};
-		Autocompleter: {
-			Settings: {};
-			log: (a?: any) => any;
-			Util: {
-				dropdownLink: (a?: any, b?: any, c?: any) => any;
-				getRestData: (a?: any, b?: any, c?: any, d?: any, e?: any, f?: any, g?: any) => any;
-			};
-			Control: (a?: any, b?: any) => any;
-			Manager: {
-				getInputDrivenDropdown: () => any;
-				triggerListener: (a?: any, b?: any) => any;
-				shortcutFired: (a?: any, b?: any) => any;
-				reattach: () => any;
-			};
-		};
-		SearchManager: (a?: any) => any;
-		AutoComplete: {
-			SETTING_DEFAULT: {
-				leadingChar: string;
-				isDataValid: (a?: any) => any;
-				backWords: number;
-				onBeforeDie: () => any;
-				onAfterStart: () => any;
-				onScroll: () => any;
-			};
-			Manager: (a?: any) => any;
-		};
-		LinkAdapter: {
-			setLink: (a?: any) => any;
-			getLink: () => any;
-		};
-		LinkBrowser: {
-			SEARCH_PANEL: string;
-			ATTACHMENTS_PANEL: string;
-			WEBLINK_PANEL: string;
-			ADVANCED_PANEL: string;
-			open: (a?: any) => any;
-			cancel: () => any;
-			LinkInfoPresenter: (a?: any) => any;
-		};
-		CloudAppPaste: (a?: any, b?: any, c?: any) => any;
+		}
 		JiraAnalytics: {
 			events: {
 				paste: {
 					key: string;
-				};
+				}
 				search: {
 					key: string;
-				};
+				}
 				trigger: {
 					key: string;
-				};
+				}
 				customizeColumn: {
 					key: string;
-				};
-			};
+				}
+			}
 			linkTypes: {
 				jqlDirect: string;
 				jql: string;
 				xml: string;
 				rss: string;
 				filter: string;
-			};
+			}
 			getDisplayType: (a?: any) => any;
 			setupAnalyticPanelActionObject: (a?: any, b?: any, c?: any) => any;
 			setupPanelActionProperties: (a?: any, b?: any, c?: any) => any;
@@ -2162,7 +2248,7 @@ interface AJSType {
 			triggerMarkupEvent: (a?: any) => any;
 			triggerPannelTriggerEvent: (a?: any) => any;
 			triggerCustomizeColumnEvent: (a?: any) => any;
-		};
+		}
 		JiraConnector: {
 			warningPopup: (a?: any) => any;
 			closePopup: () => any;
@@ -2175,17 +2261,15 @@ interface AJSType {
 				editorHotKey: string;
 				editorDropdownLink: string;
 				instructionalText: string;
-			};
-			Panels: {
-				Panels: any[];
-			};
+			}
+			Panels: any[];
 			clickConfigApplink: boolean;
 			hotKey: () => any;
 			Panel: () => any;
 			Select2: {
 				getKeyColumnsSelectedOptions: (a?: any) => any;
-			};
-		};
+			}
+		}
 		JiraChart: {
 			close: () => any;
 			edit: (a?: any) => any;
@@ -2199,9 +2283,7 @@ interface AJSType {
 			clearChartContent: (a?: any) => any;
 			loadServers: (a?: any) => any;
 			validateServerSupportedChart: (a?: any) => any;
-			Panels: {
-				Panels: any[];
-			};
+			Panels: any[];
 			Helper: {
 				getSelectedServer: (a?: any) => any;
 				bindingCommonChartElements: (a?: any) => any;
@@ -2214,13 +2296,64 @@ interface AJSType {
 				isNumber: (a?: any) => any;
 				isJqlNotEmpty: (a?: any) => any;
 				populateStatType: (a?: any, b?: any) => any;
-			};
+			}
 			Panel: () => any;
-		};
-	};
+		}
+		LinkAdapter: {
+			setLink: (a?: any) => any;
+			getLink: () => any;
+		}
+		LinkBrowser: {
+			SEARCH_PANEL: string;
+			ATTACHMENTS_PANEL: string;
+			WEBLINK_PANEL: string;
+			ADVANCED_PANEL: string;
+			open: (a?: any) => any;
+			cancel: () => any;
+			LinkInfoPresenter: (a?: any) => any;
+		}
+		Autocompleter: {
+			Settings: {
+			}
+			log: (a?: any) => any;
+			Util: {
+				dropdownLink: (a?: any, b?: any, c?: any) => any;
+				getRestData: (a?: any, b?: any, c?: any, d?: any, e?: any, f?: any, g?: any) => any;
+			}
+			Control: (a?: any, b?: any) => any;
+			Manager: {
+				getInputDrivenDropdown: () => any;
+				triggerListener: (a?: any, b?: any) => any;
+				shortcutFired: (a?: any, b?: any) => any;
+				reattach: () => any;
+			}
+		}
+		SearchManager: (a?: any) => any;
+		CloudAppPaste: (a?: any, b?: any, c?: any) => any;
+		AutoComplete: {
+			SETTING_DEFAULT: {
+				leadingChar: string;
+				isDataValid: (a?: any) => any;
+				backWords: number;
+				onBeforeDie: () => any;
+				onAfterStart: () => any;
+				onScroll: () => any;
+			}
+			Manager: (a?: any) => any;
+		}
+		PushedNavUtil: {
+			isInEditPage: () => any;
+			filterPreviewHashChange: () => any;
+			filterPreviewNavigationEvent: () => any;
+		}
+	}
 	PagePermissions: {
 		updateEditPageRestrictions: (a?: any, b?: any, c?: any, d?: any) => any;
-	};
+	}
+	progressBars: {
+		update: (a?: any, b?: any) => any;
+		setIndeterminate: (a?: any) => any;
+	}
 	Rte: {
 		HIDDEN_CHAR: string;
 		ZERO_WIDTH_WHITESPACE: string;
@@ -2245,10 +2378,11 @@ interface AJSType {
 		getTinyMceEditorMinHeight: (a?: any) => any;
 		fixEditorFocus: () => any;
 		editorFocus: (a?: any) => any;
-		autoformat: {};
+		autoformat: {
+		}
 		CursorTarget: {
 			addFixSelector: (a?: any) => any;
-		};
+		}
 		Content: {
 			offset: (a?: any) => any;
 			getSelectedText: () => any;
@@ -2258,21 +2392,20 @@ interface AJSType {
 			editorHasContentChanged: () => any;
 			editorResetContentChanged: () => any;
 			getChildIndex: (a?: any, b?: any) => any;
-		};
+		}
 		BookmarkManager: {
 			storeBookmark: () => any;
 			restoreBookmark: () => any;
-		};
+		}
 		Support: {
 			inlineTasks: () => any;
-			isCollaborativeContentType: () => any;
-		};
+		}
 		EventDelegator: (a?: any) => any;
 		Cursor: {
 			insertParagraph: (a?: any, b?: any, c?: any) => any;
 			isCursorAtStart: (a?: any, b?: any, c?: any) => any;
 			isCursorAtEnd: (a?: any, b?: any, c?: any) => any;
-		};
+		}
 		BootstrapManager: {
 			isInitComplete: () => any;
 			isEditorActive: () => any;
@@ -2282,7 +2415,7 @@ interface AJSType {
 			addTinyMcePluginInit: (a?: any) => any;
 			preInitialise: (a?: any) => any;
 			initialise: (a?: any) => any;
-		};
+		}
 		Table: {
 			convertToNormalCells: (a?: any) => any;
 			convertToHeadingCells: (a?: any) => any;
@@ -2290,18 +2423,18 @@ interface AJSType {
 			isColumnHeading: (a?: any, b?: any) => any;
 			areCellsHighlighted: (a?: any) => any;
 			isColumnHighlighted: (a?: any, b?: any) => any;
-		};
+		}
 		TablePicker: {
 			bindToControl: () => any;
 			disable: () => any;
 			enable: () => any;
 			close: () => any;
-		};
+		}
 		Migration: {
 			Table: {
 				migrateTables: (a?: any) => any;
-			};
-		};
+			}
+		}
 		Placeholder: {
 			insertTextPlaceHolder: (a?: any) => any;
 			removePlaceholder: (a?: any) => any;
@@ -2310,16 +2443,37 @@ interface AJSType {
 			getPlaceholderType: (a?: any) => any;
 			Templates: {
 				textPlaceholder: (a?: any, b?: any) => any;
-			};
-		};
-	};
+			}
+		}
+	}
 	EditorUtils: {
 		isCursorAtStartOf: (a?: any, b?: any) => any;
 		isRangeAtStartOf: (a?: any, b?: any) => any;
 		isCursorAtEndOf: (a?: any, b?: any) => any;
 		isRangeAtEndOf: (a?: any, b?: any) => any;
 		setCursorAtStartOfContents: (a?: any) => any;
-	};
+	}
+	versionDetails: {
+		major: number;
+		minor: number;
+		bugfix: number;
+		is58: boolean;
+		is59: boolean;
+	}
+	JQLHelper: {
+		isSingleKeyJQLExp: (a?: any) => any;
+		isMultipleSingleKeyJQLExp: (a?: any) => any;
+		isIssueUrlOrXmlUrl: (a?: any) => any;
+		isFilterUrl: (a?: any) => any;
+		getFilterFromFilterUrl: (a?: any) => any;
+		getJqlQueryFromJiraFilter: (a?: any, b?: any, c?: any, d?: any) => any;
+		findServerIndexFromUrl: (a?: any, b?: any) => any;
+		getJqlQueryFromUrl: (a?: any) => any;
+		getJqlAndServerIndexFromUrl: (a?: any, b?: any) => any;
+		checkQueryType: (a?: any) => any;
+		convertToJQL: (a?: any, b?: any) => any;
+	}
+	DataTable: (a?: any, b?: any, c?: any) => any;
 	jiraTrigger: (a?: any, b?: any) => any;
 	Keyboard: {
 		SpecialKey: {
@@ -2363,48 +2517,95 @@ interface AJSType {
 			toKeyCode: (a?: any) => any;
 			isAscii: (a?: any) => any;
 			isSpecialKey: (a?: any) => any;
-		};
+		}
 		characterEntered: (a?: any) => any;
 		specialKeyEntered: (a?: any) => any;
 		shortcutEntered: (a?: any) => any;
-	};
+	}
 	Control: () => any;
 	Mouse: {
 		MotionDetector: () => any;
-	};
+	}
 	Group: () => any;
 	SelectGrid: () => any;
 	ResultGrid: () => any;
+	EventQueue: any[];
+	DragAndDropUtils: {
+		defaultMimeType: string;
+		base: any[];
+		bindDragEnter: (a?: any, b?: any) => any;
+		bindDragOver: (a?: any, b?: any) => any;
+		bindDragLeave: (a?: any, b?: any) => any;
+		bindDrop: (a?: any, b?: any) => any;
+		niceSize: (a?: any) => any;
+		ieDragEnterAndDragOverCallbackWrapper: (a?: any) => any;
+		safariDragOverCallbackWrapper: (a?: any) => any;
+		mozillaDropCallbackWrapper: (a?: any) => any;
+		firefox35DragEnterAndOverCallbackWrapper: (a?: any) => any;
+		firefox35FileDataInEvent: (a?: any) => any;
+		stopPropagation: (a?: any) => any;
+		preventDefault: (a?: any) => any;
+		isFireFox35OrLater: () => any;
+		isFireFox30: () => any;
+		enableDropZoneOn: (a?: any, b?: any) => any;
+	}
+	ObservableArrayList: () => any;
+	DragAndDropProgressDialog: (a?: any) => any;
+	DragAndDrop: {
+		Templates: {
+			fileStatus: (a?: any, b?: any) => any;
+			uploadFileStatusContainer: (a?: any, b?: any) => any;
+			uploadFileStatusSuccessIcon: (a?: any, b?: any) => any;
+			uploadFileStatusProgressMessage: (a?: any, b?: any) => any;
+			dropZone: (a?: any, b?: any) => any;
+			dragOverlay: (a?: any, b?: any) => any;
+			dragAndDropTip: (a?: any, b?: any) => any;
+		}
+	}
+	UploadUtils: {
+		ErrorCode: {
+			FILE_IS_A_FOLDER_ERROR: number;
+		}
+		filterFiles: (a?: any, b?: any, c?: any) => any;
+	}
+	Analytics: {
+		triggerPrivacyPolicySafeEvent: (a?: any, b?: any) => any;
+	}
+	Popups: {
+		DisplayController: {
+			request: (a?: any) => any;
+			render: () => any;
+		}
+	}
+	JiraIssues: {
+		Remote: {
+		}
+		bindOAuthLink: (a?: any, b?: any) => any;
+		getOAuthRealm: (a?: any) => any;
+	}
+	formValidation: {
+		register: (a?: any, b?: any) => any;
+		validate: (a?: any) => any;
+	}
+	BigPipe: {
+		metrics: {
+			pageEnd: number;
+			isBigPipeEnabled: boolean;
+		}
+	}
 	MoveDialog: {
 		Breadcrumbs: (a?: any, b?: any) => any;
 		getBreadcrumbs: (a?: any, b?: any, c?: any) => any;
-	};
+	}
 	Breadcrumbs: {
 		getBreadcrumbs: (a?: any, b?: any, c?: any) => any;
 		Controller: (a?: any, b?: any) => any;
 		defaultGetBreadcrumbs: (a?: any, b?: any, c?: any) => any;
-	};
-	JQLHelper: {
-		isSingleKeyJQLExp: (a?: any) => any;
-		isMultipleSingleKeyJQLExp: (a?: any) => any;
-		isIssueUrlOrXmlUrl: (a?: any) => any;
-		isFilterUrl: (a?: any) => any;
-		getFilterFromFilterUrl: (a?: any) => any;
-		getJqlQueryFromJiraFilter: (a?: any, b?: any, c?: any, d?: any) => any;
-		findServerIndexFromUrl: (a?: any, b?: any) => any;
-		getJqlQueryFromUrl: (a?: any) => any;
-		getJqlAndServerIndexFromUrl: (a?: any, b?: any) => any;
-		checkQueryType: (a?: any) => any;
-		convertToJQL: (a?: any, b?: any) => any;
-	};
-	DataTable: (a?: any, b?: any, c?: any) => any;
-	SummaryHelper: {
-		getCurrentParams: (a?: any) => any;
-		getParam: (a?: any, b?: any) => any;
-		updateMacro: (a?: any, b?: any, c?: any, d?: any) => any;
-	};
+	}
 }
+
 declare module "ajs-type" {
 	export = AJS;
 }
+
 declare var AJS: AJSType;

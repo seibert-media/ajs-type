@@ -21,12 +21,6 @@ function analyse(thing: Indexable, name: string): AnalysisResult[] {
 			type: 'any'
 		}]
 	}
-	if (Array.isArray(thing)) {
-		return [{
-			propName: name,
-			type: 'any[]'
-		}]
-	}
 	const analysisResults: AnalysisResult[] = [];
 	const memberKeys = Object.keys(thing);
 	memberKeys.forEach((memberKey: string) => {
@@ -37,6 +31,12 @@ function analyse(thing: Indexable, name: string): AnalysisResult[] {
 					case 'function':
 						return analyseFunction(memberValue as any, memberKey);
 					case 'object':
+						if (Array.isArray(memberValue)) {
+							return {
+								propName: memberKey,
+								type: 'any[]'
+							}
+						}
 						return {
 							propName: memberKey,
 							memberResults: analyse(memberValue, memberKey)
