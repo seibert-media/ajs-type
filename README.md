@@ -43,3 +43,10 @@ If you need to support a specific version of AJS, you can configure your `packag
 ````
 
 We work with npm prerelease notation to be able to change typings while still keeping the package version equivalent to the version of AJS being typed. That way we circumvent npm's restriction where a version can only be published once without losing the correlation to `AJS.version`.
+
+### Compatibility Table
+|AJS|Confluence|
+|---|---|
+|5.9.24|5.10.8|
+|5.10.1|6.1.4|
+|6.0.6|6.4.2|
