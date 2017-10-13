@@ -1,6 +1,6 @@
 {
 	"name": "ajs-type",
-	"version": "5.10.1-0",
+	"version": "5.9.24-0",
 	"description": "TypeScript definitions for AJS",
 	"main": "",
 	"scripts": {
