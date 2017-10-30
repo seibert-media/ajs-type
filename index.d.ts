@@ -53,9 +53,9 @@ interface AJSType {
 		'date.format': string;
 	}
 	populateParameters: (a?: any) => any;
-	error: () => any;
-	log: () => any;
-	warn: () => any;
+	error: (...args: any[]) => any;
+	log: (...args: any[]) => any;
+	warn: (...args: any[]) => any;
 	toInit: (a?: any) => any;
 	firebug: () => any;
 	warnAboutFirebug: () => any;
@@ -611,7 +611,7 @@ interface AJSType {
 	}
 }
 
-declare module "ajs-type" {
+declare module 'ajs-type' {
 	export = AJS;
 }
 
