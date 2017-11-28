@@ -66,7 +66,6 @@ interface AJSType {
 	escape: (a?: any) => any;
 	escapeHtml: (a?: any) => any;
 	filterBySearch: () => any;
-	drawLogo: () => any;
 	debounce: (a?: any, b?: any) => any;
 	debounceImmediate: (a?: any, b?: any) => any;
 	id: (a?: any) => any;
@@ -249,6 +248,8 @@ interface AJSType {
 			watching: () => any;
 		}
 		hintManager: (a?: any) => any;
+		debugTime: (a?: any) => any;
+		debugTimeEnd: (a?: any) => any;
 		Defaults: {
 			maxResults: number;
 		}
@@ -503,20 +504,6 @@ interface AJSType {
 				}
 			}
 		}
-		Request: {
-			Access: {
-				result: (a?: any, b?: any) => any;
-				usernameLink: (a?: any, b?: any) => any;
-				loading: (a?: any, b?: any) => any;
-			}
-		}
-		Grant: {
-			Access: {
-				dialog: (a?: any, b?: any) => any;
-				result: (a?: any, b?: any) => any;
-				usernameLink: (a?: any, b?: any) => any;
-			}
-		}
 		PageLoadingIndicator: (a?: any) => any;
 	}
 	Position: {
@@ -601,7 +588,6 @@ interface AJSType {
 		bindOAuthLink: (a?: any, b?: any) => any;
 		getOAuthRealm: (a?: any) => any;
 	}
-	DatePicker: (a?: any, b?: any) => any;
 	dialog2: (a?: any, b?: any) => any;
 	BigPipe: {
 		metrics: {

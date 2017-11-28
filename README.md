@@ -7,10 +7,12 @@ Adds TypeScript definitions for AJS used in Atlassian products.
 Install the npm package  
 
 ```
-$ npm install --save-dev ajs-type
+$ npm install --save-dev ajs-type@6.0.6
 ```
 
-and fix your `tsconfig.json` to make the new typings known
+**Important:** You probably don't want to install `@latest` light-heartedly. Our versions reflect AJS' versions. When we update a version, we will push it, but we might need to update older versions of AJSType when they have bugs. NPM will consider the last pushed version as `@latest`. See [Versioning](https://github.com/seibert-media/ajs-type#versioning) for more info.
+
+Fix your `tsconfig.json` to make the new typings known
 
 ```
 [...]
@@ -50,3 +52,4 @@ We work with npm prerelease notation to be able to change typings while still ke
 |5.9.24|5.10.8|
 |5.10.1|6.1.4|
 |6.0.6|6.4.2|
+|6.0.6|6.5.0|
