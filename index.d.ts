@@ -1,4 +1,4 @@
-interface AJSType {
+export interface AJSType {
 	contextPath: () => any;
 	deprecate: {
 		fn: (a?: any, b?: any, c?: any) => any;
@@ -187,7 +187,7 @@ interface AJSType {
 	}
 	storageManager: (a?: any, b?: any) => any;
 	defaultIfUndefined: (a?: any, b?: any) => any;
-	debug: () => any;
+	debug: (...args: any[]) => any;
 	debugEnabled: (a?: any) => any;
 	logError: (a?: any, b?: any) => any;
 	getJSONWrap: (a?: any) => any;
