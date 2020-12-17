@@ -18,5 +18,8 @@
 	"bugs": {
 		"url": "https://github.com/seibert-media/ajs-type/issues"
 	},
-	"homepage": "https://github.com/seibert-media/ajs-type#readme"
+	"homepage": "https://github.com/seibert-media/ajs-type#readme",
+	"devDependencies": {
+		"typescript": "^4.1.3"
+	}
 }
