@@ -1,3 +1,5 @@
+import {AJS} from "./index";
+
 interface Indexable {
 	[key: string]: Indexable;
 }
@@ -96,6 +98,7 @@ const AJS_NAME = 'AJS';
 console.log(
 	formatResultsArray(
 		analyse(
+			// @tsignore
 			AJS as any,
 			AJS_NAME
 		),
